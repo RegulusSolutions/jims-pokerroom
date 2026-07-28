@@ -43,9 +43,16 @@ export default async function EventPage({ params }: Params) {
             fill
             priority
             sizes="100vw"
-            className="object-cover opacity-45"
+          className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/65 to-ink/35" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'radial-gradient(ellipse at 70% 40%, rgba(201,162,39,.18), transparent 50%), radial-gradient(ellipse at 20% 80%, rgba(13,90,52,.2), transparent 45%)',
+            }}
+          />
         </div>
 
         <div className="shell relative -mt-44 pb-20">
@@ -68,14 +75,14 @@ export default async function EventPage({ params }: Params) {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <dl className="mt-14 grid gap-px border border-gold-500/12 bg-gold-500/12 sm:grid-cols-2 lg:grid-cols-4">
+            <dl className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { k: 'When', v: event.dateLabel },
                 { k: 'Buy-in', v: event.buyIn },
                 { k: 'Starting stack', v: event.stack },
                 { k: 'Format', v: event.format },
               ].map((r) => (
-                <div key={r.k} className="bg-ink p-7">
+                <div key={r.k} className="velvet p-7">
                   <dt className="label mb-3">{r.k}</dt>
                   <dd className="font-display text-[1.1rem] leading-snug text-bone">{r.v}</dd>
                 </div>
@@ -92,11 +99,16 @@ export default async function EventPage({ params }: Params) {
                   Late registration and re-entry rules are announced at the table before cards go in
                   the air. Ask the floor if anything is unclear.
                 </p>
-                <Link href="/bookings" className="btn mt-9">Reserve a seat</Link>
+                <Link href="/bookings" className="btn mt-9">
+                  Reserve a seat
+                </Link>
               </div>
-              <div className="border-t border-gold-500/20">
+              <div className="velvet overflow-hidden">
                 {blindLevels.map((l, i) => (
-                  <div key={i} className="grid grid-cols-[52px_1fr_78px] gap-4 border-t border-gold-500/12 py-4 font-mono text-[0.76rem] text-bone/70">
+                  <div
+                    key={i}
+                    className="grid grid-cols-[52px_1fr_78px] gap-4 border-t border-gold-500/12 px-5 py-4 font-mono text-[0.76rem] text-bone/70 first:border-t-0 sm:px-6"
+                  >
                     <span className="text-gold-500">{l.level}</span>
                     <span>{l.blinds}</span>
                     <span className="text-right text-bone/40">{l.length}</span>
@@ -108,8 +120,8 @@ export default async function EventPage({ params }: Params) {
         </div>
       </section>
 
-      <section className="border-t border-gold-500/12 py-24">
-        <div className="shell">
+      <section className="relative overflow-hidden border-t border-gold-500/15 py-24">
+        <div className="shell relative">
           <p className="label mb-10">Also on the calendar</p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((e, i) => (

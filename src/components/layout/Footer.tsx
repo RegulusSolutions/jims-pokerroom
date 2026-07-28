@@ -1,17 +1,28 @@
 import Link from 'next/link';
 import { Facebook, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
+import Atmosphere from '@/components/ui/Atmosphere';
 import { site, footerNav } from '@/lib/site';
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-gold-500/15 bg-carbon pb-24 pt-24">
-      <div className="shell">
+    <footer className="relative overflow-hidden border-t border-gold-500/20 bg-carbon pb-24 pt-24">
+      <Atmosphere intensity="rich" className="opacity-50" />
+      <div className="shell relative">
+        <div className="mb-14 flex items-center justify-center gap-8 font-display text-xl text-gold-500/35 sm:gap-12 sm:text-2xl" aria-hidden="true">
+          <span>♠</span>
+          <span className="text-[var(--ruby-bright)]/40">♥</span>
+          <span className="text-[var(--ruby-bright)]/40">♦</span>
+          <span>♣</span>
+        </div>
+
         <div className="grid gap-14 lg:grid-cols-[1.3fr_repeat(3,1fr)]">
           <div>
             <p className="font-display text-2xl uppercase tracking-[0.14em] text-bone">
               Jim&rsquo;s <span className="text-gold-500">Poker Room</span>
             </p>
-            <p className="lede mt-5 max-w-xs text-[0.92rem]">{site.tagline}, on level AC6 of Colombo Lotus Tower.</p>
+            <p className="lede mt-5 max-w-xs text-[0.92rem]">
+              {site.tagline}, on level AC6 of Colombo Lotus Tower.
+            </p>
 
             <div className="mt-8 space-y-3 font-mono text-[0.7rem] tracking-wide text-bone/55">
               <a href={site.contact.phoneHref} className="flex items-center gap-3 transition-colors hover:text-gold-300">
@@ -46,7 +57,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center border border-gold-500/25 text-gold-500 transition-all duration-300 hover:border-gold-500 hover:bg-gold-500 hover:text-ink"
+                  className="flex h-10 w-10 items-center justify-center border border-gold-500/30 text-gold-500 transition-all duration-300 hover:border-gold-500 hover:bg-gold-500 hover:text-ink"
                 >
                   <Icon size={15} strokeWidth={1.4} />
                 </a>
@@ -99,18 +110,26 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex items-start justify-start lg:justify-end">
-            <span className="border border-gold-500/40 px-3 py-1.5 font-mono text-[0.7rem] tracking-wider2 text-gold-400">
+            <span className="border border-gold-500/50 bg-ink/40 px-3 py-1.5 font-mono text-[0.7rem] tracking-wider2 text-gold-300">
               18+
             </span>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-gold-500/10 pt-8 font-mono text-[0.64rem] tracking-wide text-ash sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+        <div className="mt-14 flex flex-col gap-3 border-t border-gold-500/15 pt-8 font-mono text-[0.64rem] tracking-wide text-ash sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
+          </p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="transition-colors hover:text-gold-400">Privacy</Link>
-            <Link href="/terms" className="transition-colors hover:text-gold-400">Terms</Link>
-            <Link href="/responsible-gaming" className="transition-colors hover:text-gold-400">18+</Link>
+            <Link href="/privacy" className="transition-colors hover:text-gold-400">
+              Privacy
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-gold-400">
+              Terms
+            </Link>
+            <Link href="/responsible-gaming" className="transition-colors hover:text-gold-400">
+              18+
+            </Link>
           </div>
         </div>
       </div>

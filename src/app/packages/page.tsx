@@ -4,7 +4,8 @@ import { Check } from 'lucide-react';
 import PageHero from '@/components/ui/PageHero';
 import Reveal from '@/components/ui/Reveal';
 import CtaBand from '@/components/ui/CtaBand';
-import { packages } from '@/lib/content';
+import Atmosphere from '@/components/ui/Atmosphere';
+import { packages, images } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Packages',
@@ -19,15 +20,19 @@ export default function PackagesPage() {
         label="Packages"
         lines={['Come for the cards.', { text: 'We do the rest.', gold: true }]}
         body="Food and beverage are complimentary for anyone seated in a live game. Beyond that, visiting players can have the hotel, the transfers and sometimes the flight handled by a host."
+        image={images.casino.chips}
       />
 
-      <section className="pb-28">
-        <div className="shell space-y-6">
+      <section className="relative overflow-hidden pb-28">
+        <Atmosphere intensity="soft" />
+        <div className="shell relative space-y-6">
           {packages.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.08}>
               <article
-                className={`bracket surface grid overflow-hidden lg:grid-cols-[0.9fr_1.1fr] ${
-                  'featured' in p && p.featured ? 'border-gold-500/40' : ''
+                className={`bracket velvet grid overflow-hidden lg:grid-cols-[0.9fr_1.1fr] ${
+                  'featured' in p && p.featured
+                    ? 'border-gold-500/45 shadow-[0_0_50px_rgba(201,162,39,.1)]'
+                    : ''
                 }`}
               >
                 <div className="relative min-h-[300px] overflow-hidden bg-onyx">
@@ -36,9 +41,9 @@ export default function PackagesPage() {
                     alt={p.name}
                     fill
                     sizes="(max-width:1024px) 100vw, 45vw"
-                    className="object-cover opacity-60 grayscale transition-all duration-[1000ms] hover:opacity-90 hover:grayscale-0"
+                    className="object-cover transition-transform duration-[1100ms] hover:scale-[1.04]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-onyx/70" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-onyx/80" />
                 </div>
 
                 <div className="p-9 sm:p-12">
@@ -63,9 +68,7 @@ export default function PackagesPage() {
                     ))}
                   </ul>
 
-                  <p className="mt-9 font-mono text-[0.72rem] tracking-wider2 text-gold-300">
-                    {p.price}
-                  </p>
+                  <p className="mt-9 font-mono text-[0.72rem] tracking-wider2 text-gold-300">{p.price}</p>
                 </div>
               </article>
             </Reveal>

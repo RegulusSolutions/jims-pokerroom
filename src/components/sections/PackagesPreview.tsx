@@ -3,12 +3,14 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
+import Atmosphere from '@/components/ui/Atmosphere';
 import { packages } from '@/lib/content';
 
 export default function PackagesPreview() {
   return (
-    <section className="py-28 sm:py-36">
-      <div className="shell">
+    <section className="relative overflow-hidden py-28 sm:py-36">
+      <Atmosphere intensity="soft" />
+      <div className="shell relative">
         <SectionHeading
           label="Flying in"
           title="We handle the"
@@ -22,8 +24,8 @@ export default function PackagesPreview() {
             <Reveal key={p.name} delay={i * 0.09}>
               <Link href="/packages" className="group block h-full">
                 <article
-                  className={`bracket surface flex h-full flex-col overflow-hidden transition-colors duration-500 group-hover:border-gold-500/45 ${
-                    'featured' in p && p.featured ? 'border-gold-500/40' : ''
+                  className={`bracket velvet flex h-full flex-col overflow-hidden transition-all duration-500 group-hover:border-gold-500/50 ${
+                    'featured' in p && p.featured ? 'border-gold-500/45 shadow-[0_0_40px_rgba(201,162,39,.12)]' : ''
                   }`}
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-onyx">
@@ -32,9 +34,14 @@ export default function PackagesPreview() {
                       alt={p.name}
                       fill
                       sizes="(max-width:1024px) 100vw, 33vw"
-                      className="object-cover opacity-60 grayscale transition-all duration-[900ms] group-hover:scale-105 group-hover:opacity-90 group-hover:grayscale-0"
+                      className="object-cover transition-transform duration-[1100ms] group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-onyx via-onyx/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-onyx via-onyx/40 to-transparent" />
+                    {'featured' in p && p.featured && (
+                      <span className="absolute left-4 top-4 border border-gold-500 bg-ink/80 px-2.5 py-1 font-mono text-[0.58rem] uppercase tracking-label text-gold-200 backdrop-blur">
+                        Most booked
+                      </span>
+                    )}
                   </div>
                   <div className="flex flex-1 flex-col p-7">
                     <p className="label">{p.for}</p>

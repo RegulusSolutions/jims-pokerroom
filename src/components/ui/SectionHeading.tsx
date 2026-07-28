@@ -30,7 +30,13 @@ export default function SectionHeading({
         </Reveal>
       )}
       <Reveal delay={0.2}>
-        <div className={`mt-8 h-px w-28 bg-gold-line ${center ? 'mx-auto' : ''}`} />
+        <div className={`mt-8 flex items-center gap-3 ${center ? 'justify-center' : ''}`}>
+          <div className="h-px w-10 bg-gold-line sm:w-14" />
+          <span className="suit-divider text-sm" aria-hidden="true">
+            ♦
+          </span>
+          <div className="h-px w-10 bg-gold-line sm:w-14" />
+        </div>
       </Reveal>
     </div>
   );

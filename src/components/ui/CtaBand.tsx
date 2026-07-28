@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Reveal from './Reveal';
-import FloatingChips from './FloatingChips';
+import CasinoMotifs from './CasinoMotifs';
 import { site } from '@/lib/site';
 
 export default function CtaBand({
@@ -14,7 +14,7 @@ export default function CtaBand({
 }) {
   return (
     <section className="relative overflow-hidden border-t border-gold-500/15 bg-carbon py-28 sm:py-36">
-      <FloatingChips />
+      <CasinoMotifs dense />
       <div
         className="pointer-events-none absolute inset-0"
         style={{

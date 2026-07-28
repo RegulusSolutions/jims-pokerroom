@@ -6,6 +6,7 @@ import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
 import CtaBand from '@/components/ui/CtaBand';
 import Counter from '@/components/ui/Counter';
+import Atmosphere from '@/components/ui/Atmosphere';
 import { houseValues, amenities, images } from '@/lib/content';
 
 export const metadata: Metadata = {
@@ -21,10 +22,12 @@ export default function AboutPage() {
         label="Who are we"
         lines={['A room built', { text: 'for the game.', gold: true }]}
         body="Not as large as the country's major casinos, and deliberately so. Jim's has carved out a niche in the local poker scene by doing one thing properly."
+        image={images.room}
       />
 
-      <section className="pb-28">
-        <div className="shell grid items-start gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
+      <section className="relative overflow-hidden pb-28">
+        <Atmosphere intensity="soft" />
+        <div className="shell relative grid items-start gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
           <div className="space-y-6">
             <Reveal>
               <p className="lede">
@@ -52,7 +55,7 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal delay={0.2}>
-              <div className="mt-12 grid grid-cols-2 gap-8 border-t border-gold-500/15 pt-10 sm:grid-cols-4">
+              <div className="velvet mt-12 grid grid-cols-2 gap-8 p-8 sm:grid-cols-4">
                 {[
                   { n: 2, s: '', l: 'Tables' },
                   { n: 9, s: '', l: 'Seats each' },
@@ -73,27 +76,28 @@ export default function AboutPage() {
           </div>
 
           <Reveal delay={0.12}>
-            <div className="bracket relative aspect-[3/4] overflow-hidden border border-gold-500/15">
+            <div className="bracket photo-frame relative aspect-[3/4]">
               <Image
                 src={images.about}
                 alt="Inside Jim's Poker Room"
                 fill
                 sizes="(max-width:1024px) 100vw, 40vw"
-                className="object-cover opacity-80"
+                className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent" />
             </div>
           </Reveal>
         </div>
       </section>
 
-      <section className="border-t border-gold-500/12 bg-carbon/40 py-28">
-        <div className="shell">
+      <section className="relative overflow-hidden border-t border-gold-500/15 felt-band py-28">
+        <Atmosphere intensity="rich" className="opacity-50" />
+        <div className="shell relative">
           <SectionHeading label="The house" title="What we" gold="hold to." />
-          <div className="mt-16 grid gap-px border border-gold-500/12 bg-gold-500/12 sm:grid-cols-2">
+          <div className="mt-16 grid gap-5 sm:grid-cols-2">
             {houseValues.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.07}>
-                <div className="group h-full bg-ink p-9 transition-colors duration-500 hover:bg-onyx sm:p-11">
+                <div className="group velvet h-full p-9 transition-all duration-500 hover:border-gold-500/50 sm:p-11">
                   <p className="font-mono text-[0.62rem] tracking-label text-gold-500">
                     {String(i + 1).padStart(2, '0')}
                   </p>
@@ -108,24 +112,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-28">
-        <div className="shell">
+      <section className="relative overflow-hidden py-28">
+        <Atmosphere intensity="edge" className="opacity-60" />
+        <div className="shell relative">
           <SectionHeading label="In the room" title="What you get" gold="when you sit." />
           <Reveal delay={0.12}>
-            <ul className="mt-14 grid gap-px border border-gold-500/12 bg-gold-500/12 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {amenities.map((a) => (
                 <li
                   key={a}
-                  className="bg-ink px-7 py-6 font-mono text-[0.75rem] tracking-wide text-bone/65 transition-colors duration-400 hover:bg-onyx hover:text-gold-200"
+                  className="velvet px-7 py-6 font-mono text-[0.75rem] tracking-wide text-bone/70 transition-all duration-400 hover:border-gold-500/45 hover:text-gold-200"
                 >
-                  <span className="mr-3 text-gold-500">&#9670;</span>
+                  <span className="mr-3 text-gold-500">♦</span>
                   {a}
                 </li>
               ))}
             </ul>
           </Reveal>
           <Reveal delay={0.2}>
-            <Link href="/founder" className="btn mt-12">Meet the founder</Link>
+            <Link href="/founder" className="btn mt-12">
+              Meet the founder
+            </Link>
           </Reveal>
         </div>
       </section>

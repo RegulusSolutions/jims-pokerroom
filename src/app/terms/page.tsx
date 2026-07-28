@@ -18,11 +18,11 @@ export default function TermsPage() {
   return (
     <>
       <PageHero label="Legal" lines={['Terms &', { text: 'conditions.', gold: true }]} />
-      <section className="pb-28">
-        <div className="shell max-w-3xl space-y-10">
+      <section className="relative overflow-hidden pb-28">
+        <div className="shell relative max-w-3xl space-y-6">
           {sections.map((s, i) => (
             <Reveal key={s.t} delay={i * 0.06}>
-              <div className="border-t border-gold-500/15 pt-8">
+              <div className="velvet p-8">
                 <p className="font-mono text-[0.6rem] tracking-label text-gold-500">
                   {String(i + 1).padStart(2, '0')}
                 </p>

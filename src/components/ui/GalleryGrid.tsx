@@ -39,7 +39,7 @@ export default function GalleryGrid({ shots }: { shots: readonly Shot[] }) {
             key={s.src + i}
             onClick={() => setIndex(i)}
             className={cn(
-              'bracket group relative overflow-hidden border border-gold-500/12 bg-onyx',
+              'bracket group relative overflow-hidden border border-gold-500/20 bg-onyx',
               s.span === 'wide' && 'lg:col-span-2',
               s.span === 'tall' && 'row-span-2'
             )}
@@ -49,7 +49,7 @@ export default function GalleryGrid({ shots }: { shots: readonly Shot[] }) {
               alt={s.alt}
               fill
               sizes="(max-width:640px) 50vw, 25vw"
-              className="object-cover opacity-65 grayscale transition-all duration-[900ms] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.07] group-hover:opacity-100 group-hover:grayscale-0"
+              className="object-cover transition-transform duration-[1100ms] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.07]"
             />
             <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-4 text-left font-mono text-[0.62rem] uppercase tracking-wider2 text-gold-200 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               {s.alt}

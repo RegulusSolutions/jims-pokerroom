@@ -3,7 +3,9 @@ import { Phone, MessageCircle, Clock } from 'lucide-react';
 import PageHero from '@/components/ui/PageHero';
 import Reveal from '@/components/ui/Reveal';
 import BookingForm from '@/components/ui/BookingForm';
+import Atmosphere from '@/components/ui/Atmosphere';
 import { site } from '@/lib/site';
+import { images } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Reserve a seat',
@@ -17,15 +19,21 @@ export default function BookingsPage() {
         label="Reservations"
         lines={['Hold me', { text: 'a seat.', gold: true }]}
         body="Two tables, eighteen seats. Walk-ins are welcome any night, but if you want a specific stake or a tournament entry, tell us in advance."
+        image={images.casino.hero}
       />
 
-      <section className="pb-28">
-        <div className="shell grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:gap-16">
+      <section className="relative overflow-hidden pb-28">
+        <Atmosphere intensity="soft" />
+        <div className="shell relative grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:gap-16">
           <Reveal>
-            <BookingForm />
+            <div className="velvet p-1">
+              <div className="bg-ink/40 p-6 sm:p-8">
+                <BookingForm />
+              </div>
+            </div>
           </Reveal>
 
-          <div className="space-y-6">
+          <div className="space-y-5">
             {[
               {
                 Icon: Phone,
@@ -43,7 +51,10 @@ export default function BookingsPage() {
               },
             ].map(({ Icon, t, b, cta, href }, i) => (
               <Reveal key={t} delay={0.1 + i * 0.07}>
-                <a href={href} className="surface bracket block p-8 transition-colors duration-500 hover:border-gold-500/45">
+                <a
+                  href={href}
+                  className="velvet bracket block p-8 transition-all duration-500 hover:border-gold-500/50"
+                >
                   <Icon size={18} strokeWidth={1.3} className="mb-6 text-gold-500" />
                   <h3 className="h-display text-[1.35rem]">{t}</h3>
                   <p className="lede mt-3 text-[0.88rem]">{b}</p>
@@ -53,7 +64,7 @@ export default function BookingsPage() {
             ))}
 
             <Reveal delay={0.24}>
-              <div className="surface p-8">
+              <div className="velvet p-8">
                 <Clock size={18} strokeWidth={1.3} className="mb-6 text-gold-500" />
                 <p className="label mb-4">When we are open</p>
                 <ul className="space-y-2 font-mono text-[0.72rem] text-bone/55">

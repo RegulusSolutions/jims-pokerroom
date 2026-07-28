@@ -32,11 +32,11 @@ export default function PrivacyPage() {
   return (
     <>
       <PageHero label="Legal" lines={['Privacy', { text: 'policy.', gold: true }]} />
-      <section className="pb-28">
-        <div className="shell max-w-3xl space-y-10">
+      <section className="relative overflow-hidden pb-28">
+        <div className="shell relative max-w-3xl space-y-6">
           {sections.map((s, i) => (
             <Reveal key={s.t} delay={i * 0.06}>
-              <div className="border-t border-gold-500/15 pt-8">
+              <div className="velvet p-8">
                 <h2 className="h-display text-[1.4rem]">{s.t}</h2>
                 <p className="lede mt-4">{s.b}</p>
               </div>

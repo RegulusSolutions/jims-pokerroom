@@ -3,6 +3,7 @@ import Image from 'next/image';
 import PageHero from '@/components/ui/PageHero';
 import Reveal from '@/components/ui/Reveal';
 import CtaBand from '@/components/ui/CtaBand';
+import Atmosphere from '@/components/ui/Atmosphere';
 import { site } from '@/lib/site';
 import { images } from '@/lib/content';
 
@@ -18,20 +19,22 @@ export default function FounderPage() {
         label="Founder"
         lines={['Jim', { text: 'Ramchand.', gold: true }]}
         body="The room carries his name because he is in it. Most nights you will find him at the rail, watching the games run."
+        image={images.casino.chips}
       />
 
-      <section className="pb-28">
-        <div className="shell grid gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
+      <section className="relative overflow-hidden pb-28">
+        <Atmosphere intensity="soft" />
+        <div className="shell relative grid gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
           <Reveal>
-            <div className="bracket relative aspect-[3/4] overflow-hidden border border-gold-500/15">
+            <div className="bracket photo-frame relative aspect-[3/4]">
               <Image
                 src={images.about}
                 alt={site.founder}
                 fill
                 sizes="(max-width:1024px) 100vw, 38vw"
-                className="object-cover opacity-80 grayscale"
+                className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/85 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
               <div className="absolute bottom-7 left-7">
                 <p className="font-display text-2xl text-gold-100">{site.founder}</p>
                 <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-label text-gold-500">
@@ -43,7 +46,7 @@ export default function FounderPage() {
 
           <div className="space-y-6">
             <Reveal>
-              <blockquote className="border-l border-gold-500/50 pl-7">
+              <blockquote className="velvet border-l-2 border-gold-500/60 p-8 pl-7">
                 <p className="font-display text-[clamp(1.4rem,2.6vw,2rem)] leading-snug text-gold-100">
                   &ldquo;A poker room is only as good as its worst-run table. That is the whole
                   job.&rdquo;
@@ -78,13 +81,13 @@ export default function FounderPage() {
             </Reveal>
 
             <Reveal delay={0.26}>
-              <div className="mt-12 grid gap-px border border-gold-500/12 bg-gold-500/12 sm:grid-cols-3">
+              <div className="mt-12 grid gap-4 sm:grid-cols-3">
                 {[
                   { k: 'Founded', v: 'Jim Ramchand' },
                   { k: 'Venue', v: 'Majestic Pride, AC6' },
                   { k: 'Focus', v: 'Poker only' },
                 ].map((r) => (
-                  <div key={r.k} className="bg-ink p-7">
+                  <div key={r.k} className="velvet p-7">
                     <p className="label mb-3">{r.k}</p>
                     <p className="font-display text-[1.15rem] text-bone">{r.v}</p>
                   </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import PageHero from '@/components/ui/PageHero';
 import Reveal from '@/components/ui/Reveal';
+import Atmosphere from '@/components/ui/Atmosphere';
 import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -44,12 +45,13 @@ export default function ResponsibleGamingPage() {
         body="Gambling should cost you an evening, not a month. These are the safeguards we apply and the ones we ask you to apply yourself."
       />
 
-      <section className="pb-28">
-        <div className="shell">
-          <div className="grid gap-px border border-gold-500/12 bg-gold-500/12 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="relative overflow-hidden pb-28">
+        <Atmosphere intensity="soft" />
+        <div className="shell relative">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {points.map((p, i) => (
               <Reveal key={p.t} delay={(i % 3) * 0.07}>
-                <div className="h-full bg-ink p-9 transition-colors duration-500 hover:bg-onyx">
+                <div className="velvet h-full p-9 transition-all duration-500 hover:border-gold-500/45">
                   <p className="font-mono text-[0.6rem] tracking-label text-gold-500">
                     {String(i + 1).padStart(2, '0')}
                   </p>
@@ -61,7 +63,7 @@ export default function ResponsibleGamingPage() {
           </div>
 
           <Reveal delay={0.2}>
-            <div className="surface mt-10 p-9 sm:p-12">
+            <div className="velvet mt-10 p-9 sm:p-12">
               <p className="label mb-5">If it has stopped being a game</p>
               <p className="lede max-w-2xl">
                 If gambling is affecting your finances, your work or the people around you, talk to

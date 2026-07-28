@@ -8,8 +8,8 @@ const nextConfig = {
       { protocol: 'https', hostname: 'darkgray-stork-483947.hostingersite.com' },
       { protocol: 'https', hostname: 'cornflowerblue-rabbit-756428.hostingersite.com' },
       { protocol: 'https', hostname: 'jimspokerroom.lk' },
+      { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
-  transpilePackages: ['three'],
 };
 export default nextConfig;

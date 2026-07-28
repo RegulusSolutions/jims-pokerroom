@@ -8,6 +8,15 @@ export const images = {
   room: `${HOST}/2024/12/Home.jpg`,
   chipA: `${HOST}/2025/01/poker-chip-1-new2.png`,
   chipB: `${HOST}/2025/01/poker-chip-2-new-11.png`,
+  /** Colourful casino stock — used for hero atmosphere and floor showcase. */
+  casino: {
+    hero: 'https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&w=2000&q=80',
+    chips: 'https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&w=1400&q=80',
+    cards: 'https://images.unsplash.com/photo-1541278107931-e006523892df?auto=format&fit=crop&w=1200&q=80',
+    roulette: 'https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&w=1200&q=80',
+    felt: 'https://images.unsplash.com/photo-1518895312237-a9e235080b74?auto=format&fit=crop&w=1400&q=80',
+    dice: 'https://images.unsplash.com/photo-1528819622765-d6bcf201db90?auto=format&fit=crop&w=1000&q=80',
+  },
 };
 
 /* ------------------------------------------------------------------ games */

@@ -34,8 +34,8 @@ export default function Nav() {
         className={cn(
           'fixed inset-x-0 top-0 z-50 transition-all duration-500',
           scrolled
-            ? 'border-b border-gold-500/15 bg-ink/85 backdrop-blur-xl'
-            : 'border-b border-transparent bg-gradient-to-b from-ink/70 to-transparent'
+            ? 'border-b border-gold-500/20 bg-ink/90 shadow-[0_10px_40px_rgba(0,0,0,.35)] backdrop-blur-xl'
+            : 'border-b border-transparent bg-gradient-to-b from-ink/80 to-transparent'
         )}
       >
         <div className="shell flex items-center justify-between py-5">
