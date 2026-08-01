@@ -6,6 +6,7 @@ import EventsPreview from '@/components/sections/EventsPreview';
 import PackagesPreview from '@/components/sections/PackagesPreview';
 import Location from '@/components/sections/Location';
 import Marquee from '@/components/ui/Marquee';
+import CasinoSpectacle from '@/components/ui/CasinoSpectacle';
 import CasinoShowcase from '@/components/ui/CasinoShowcase';
 import CtaBand from '@/components/ui/CtaBand';
 
@@ -24,6 +25,7 @@ export default function HomePage() {
           'Open 6pm',
         ]}
       />
+      <CasinoSpectacle />
       <CasinoShowcase />
       <About />
       <GamesStrip />

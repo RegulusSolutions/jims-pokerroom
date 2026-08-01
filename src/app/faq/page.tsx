@@ -32,7 +32,7 @@ export default function FaqPage() {
         label="FAQ"
         lines={['Before you', { text: 'sit down.', gold: true }]}
         body="Everything people ask on the phone, answered here so you do not have to."
-        image={images.casino.dice}
+        image={images.casino.night}
       />
 
       <section className="relative overflow-hidden pb-28">

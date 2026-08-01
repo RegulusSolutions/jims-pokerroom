@@ -48,6 +48,26 @@ const config: Config = {
         marquee:{ '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
         shimmer:{ '0%': { backgroundPosition: '200% 0' }, '100%': { backgroundPosition: '-200% 0' } },
         pulseDot: { '0%,100%': { opacity: '1', transform: 'scale(1)' }, '50%': { opacity: '.3', transform: 'scale(.65)' } },
+        wheelSpin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        wheelSpinRev: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(-360deg)' },
+        },
+        dealIn: {
+          '0%': { opacity: '0', transform: 'translateY(40px) rotate(-18deg) scale(.85)' },
+          '100%': { opacity: '1', transform: 'translateY(0) rotate(var(--deal-rot, 0deg)) scale(1)' },
+        },
+        neonPulse: {
+          '0%,100%': { opacity: '0.7', filter: 'drop-shadow(0 0 8px rgba(201,162,39,.4))' },
+          '50%': { opacity: '1', filter: 'drop-shadow(0 0 22px rgba(240,223,168,.85))' },
+        },
+        ballOrbit: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         rise:    'rise 1.1s cubic-bezier(.16,1,.3,1) forwards',
@@ -56,6 +76,11 @@ const config: Config = {
         marquee: 'marquee 38s linear infinite',
         shimmer: 'shimmer 6s linear infinite',
         pulseDot:'pulseDot 2.2s ease-in-out infinite',
+        wheelSpin: 'wheelSpin 28s linear infinite',
+        wheelSpinRev: 'wheelSpinRev 48s linear infinite',
+        dealIn:  'dealIn .9s cubic-bezier(.16,1,.3,1) forwards',
+        neonPulse: 'neonPulse 3.2s ease-in-out infinite',
+        ballOrbit: 'ballOrbit 9s linear infinite',
       },
     },
   },

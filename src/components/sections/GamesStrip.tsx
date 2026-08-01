@@ -1,19 +1,67 @@
 import Link from 'next/link';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
-import Atmosphere from '@/components/ui/Atmosphere';
 import { games } from '@/lib/content';
 
-const accents = [
-  { suit: '♠', color: 'rgba(240,223,168,.9)', wash: 'rgba(201,162,39,.14)' },
-  { suit: '♥', color: 'rgba(225,29,72,.9)', wash: 'rgba(155,27,47,.18)' },
-  { suit: '♦', color: 'rgba(225,29,72,.9)', wash: 'rgba(155,27,47,.14)' },
+const seats = [
+  {
+    suit: '♠',
+    color: '#c9a227',
+    hole: [
+      { r: 'A', s: '♠' },
+      { r: 'K', s: '♠' },
+    ],
+  },
+  {
+    suit: '♥',
+    color: '#e11d48',
+    hole: [
+      { r: 'A', s: '♥' },
+      { r: 'A', s: '♦' },
+    ],
+  },
+  {
+    suit: '♦',
+    color: '#e11d48',
+    hole: [
+      { r: 'Q', s: '♦' },
+      { r: 'J', s: '♦' },
+    ],
+  },
 ] as const;
 
+function HoleCard({ rank, suit }: { rank: string; suit: string }) {
+  const red = suit === '♥' || suit === '♦';
+  return (
+    <div
+      className="flex aspect-[5/7] w-11 flex-col justify-between rounded-sm border border-white/40 bg-gradient-to-br from-white to-[#efe6d4] px-1 py-1 shadow-lg sm:w-12"
+      style={{ color: red ? '#e11d48' : '#1a1a1e' }}
+      aria-hidden="true"
+    >
+      <span className="font-display text-[0.65rem] font-semibold leading-none">{rank}</span>
+      <span className="self-center font-display text-base leading-none">{suit}</span>
+      <span className="rotate-180 self-end font-display text-[0.65rem] font-semibold leading-none">
+        {rank}
+      </span>
+    </div>
+  );
+}
+
+/** Three seats at a felt table — each game is a place at the rail. */
 export default function GamesStrip() {
   return (
-    <section className="relative overflow-hidden border-t border-gold-500/15 felt-band py-28 sm:py-36">
-      <Atmosphere intensity="rich" className="opacity-60" />
+    <section className="relative overflow-hidden border-t border-gold-500/15 py-28 sm:py-36">
+      {/* Deep felt stage */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse 85% 70% at 50% 55%, #0d5a34 0%, #063820 38%, #050506 72%)',
+        }}
+      />
+      <div className="pointer-events-none absolute inset-x-[8%] top-[18%] bottom-[12%] rounded-[50%] border border-gold-500/25 opacity-40" />
+      <div className="pointer-events-none absolute inset-x-[14%] top-[24%] bottom-[18%] rounded-[50%] border border-gold-500/15 opacity-30" />
+
       <div className="shell relative">
         <SectionHeading
           label="The turn"
@@ -22,53 +70,58 @@ export default function GamesStrip() {
           body="Hold'em is the house game. Omaha runs alongside it for players who want more variance in the pot."
         />
 
-        <div className="mt-16 grid gap-5 lg:grid-cols-3">
+        <div className="mt-16 grid gap-5 lg:grid-cols-3 lg:gap-6">
           {games.map((g, i) => {
-            const a = accents[i] ?? accents[0];
+            const seat = seats[i] ?? seats[0];
             return (
-              <Reveal key={g.code} delay={i * 0.08}>
+              <Reveal key={g.code} delay={i * 0.1}>
                 <Link href="/games" className="group block h-full">
-                  <article className="velvet relative flex h-full flex-col overflow-hidden p-8 transition-all duration-500 group-hover:border-gold-500/50 sm:p-9">
-                    <div
-                      className="pointer-events-none absolute -right-6 -top-8 font-display text-[7rem] leading-none opacity-[0.12] transition-opacity duration-500 group-hover:opacity-[0.22]"
-                      style={{ color: a.color }}
-                      aria-hidden="true"
-                    >
-                      {a.suit}
-                    </div>
-                    <div
-                      className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-                      style={{
-                        background: `radial-gradient(ellipse at 80% 0%, ${a.wash}, transparent 55%)`,
-                      }}
-                    />
+                  <article className="relative flex h-full flex-col overflow-hidden rounded-sm border border-gold-500/30 bg-ink/75 backdrop-blur-sm transition-all duration-500 group-hover:-translate-y-2 group-hover:border-gold-500/60 group-hover:shadow-[0_24px_60px_rgba(0,0,0,.45)]">
+                    {/* Seat rail */}
+                    <div className="h-1.5 w-full" style={{ backgroundColor: seat.color }} />
 
-                    <div className="relative flex items-center justify-between">
-                      <span className="font-mono text-[0.72rem] tracking-wider2 text-gold-500">
-                        {g.code}
-                      </span>
-                      <span className="font-display text-2xl" style={{ color: a.color }} aria-hidden="true">
-                        {a.suit}
-                      </span>
-                    </div>
+                    <div className="flex flex-1 flex-col p-7 sm:p-8">
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <p className="font-mono text-[0.68rem] tracking-wider2 text-gold-500">
+                            Seat {String(i + 1).padStart(2, '0')} · {g.code}
+                          </p>
+                          <h3 className="h-display mt-4 text-[1.75rem] transition-colors duration-500 group-hover:text-gold-200 sm:text-[1.95rem]">
+                            {g.name}
+                          </h3>
+                          <p className="mt-2 font-mono text-[0.6rem] uppercase tracking-label text-bone/40">
+                            {g.detail}
+                          </p>
+                        </div>
+                        <div className="flex -space-x-2 pt-1">
+                          {seat.hole.map((c) => (
+                            <div
+                              key={c.r + c.s}
+                              className="transition-transform duration-500 group-hover:-translate-y-1 first:rotate-[-8deg] last:rotate-[8deg]"
+                            >
+                              <HoleCard rank={c.r} suit={c.s} />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
 
-                    <h3 className="h-display relative mt-8 text-[1.85rem] transition-colors duration-500 group-hover:text-gold-200 sm:text-[2.05rem]">
-                      {g.name}
-                    </h3>
-                    <p className="relative mt-2 font-mono text-[0.62rem] uppercase tracking-label text-bone/40">
-                      {g.detail}
-                    </p>
-                    <p className="lede relative mt-5 flex-1 text-[0.9rem]">{g.body}</p>
+                      <p className="lede mt-6 flex-1 text-[0.9rem]">{g.body}</p>
 
-                    <div className="relative mt-8 flex flex-wrap gap-2 border-t border-gold-500/15 pt-6">
-                      {g.stakes.map((s) => (
-                        <span
-                          key={s}
-                          className="border border-gold-500/30 bg-ink/40 px-3 py-1.5 font-mono text-[0.62rem] tracking-wide text-gold-200"
-                        >
-                          {s}
-                        </span>
-                      ))}
+                      <div className="mt-8 border-t border-gold-500/20 pt-5">
+                        <p className="mb-3 font-mono text-[0.55rem] uppercase tracking-label text-bone/35">
+                          Stakes tonight
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {g.stakes.map((s) => (
+                            <span
+                              key={s}
+                              className="border border-gold-500/35 bg-[#063820]/50 px-3 py-1.5 font-mono text-[0.62rem] tracking-wide text-gold-200"
+                            >
+                              {s}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </article>
                 </Link>
@@ -76,6 +129,14 @@ export default function GamesStrip() {
             );
           })}
         </div>
+
+        <Reveal delay={0.35}>
+          <div className="mt-10 flex justify-center">
+            <Link href="/games" className="btn">
+              Full stakes & rules
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

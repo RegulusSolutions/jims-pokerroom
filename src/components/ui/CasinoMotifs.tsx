@@ -12,6 +12,22 @@ const SUIT_COLOR: Record<Suit, string> = {
   '♦': '#e11d48',
 };
 
+/** Pre-rounded edge ticks so SSR and client SVG attrs match exactly. */
+const CHIP_EDGE_TICKS = [
+  { x1: 93, y1: 50, x2: 98, y2: 50 },
+  { x1: 87.24, y1: 71.5, x2: 91.57, y2: 74 },
+  { x1: 71.5, y1: 87.24, x2: 74, y2: 91.57 },
+  { x1: 50, y1: 93, x2: 50, y2: 98 },
+  { x1: 28.5, y1: 87.24, x2: 26, y2: 91.57 },
+  { x1: 12.76, y1: 71.5, x2: 8.43, y2: 74 },
+  { x1: 7, y1: 50, x2: 2, y2: 50 },
+  { x1: 12.76, y1: 28.5, x2: 8.43, y2: 26 },
+  { x1: 28.5, y1: 12.76, x2: 26, y2: 8.43 },
+  { x1: 50, y1: 7, x2: 50, y2: 2 },
+  { x1: 71.5, y1: 12.76, x2: 74, y2: 8.43 },
+  { x1: 87.24, y1: 28.5, x2: 91.57, y2: 26 },
+] as const;
+
 function PlayingCard({
   rank,
   suit,
@@ -75,25 +91,19 @@ function Chip({
         <circle cx="50" cy="50" r="48" fill={`url(#${gradId})`} />
         <circle cx="50" cy="50" r="42" fill="none" stroke={rim} strokeWidth="5" />
         <circle cx="50" cy="50" r="36" fill="none" stroke={color} strokeWidth="3" />
-        {Array.from({ length: 12 }).map((_, i) => {
-          const a = (i * 30 * Math.PI) / 180;
-          const x1 = 50 + Math.cos(a) * 43;
-          const y1 = 50 + Math.sin(a) * 43;
-          const x2 = 50 + Math.cos(a) * 48;
-          const y2 = 50 + Math.sin(a) * 48;
-          return (
-            <line
-              key={i}
-              x1={x1}
-              y1={y1}
-              x2={x2}
-              y2={y2}
-              stroke="rgba(255,255,255,0.75)"
-              strokeWidth="3.5"
-              strokeLinecap="round"
-            />
-          );
-        })}
+        {/* Static tick coords — avoids SSR/client float drift from Math.sin/cos */}
+        {CHIP_EDGE_TICKS.map((t, i) => (
+          <line
+            key={i}
+            x1={t.x1}
+            y1={t.y1}
+            x2={t.x2}
+            y2={t.y2}
+            stroke="rgba(255,255,255,0.75)"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+          />
+        ))}
         <circle
           cx="50"
           cy="50"

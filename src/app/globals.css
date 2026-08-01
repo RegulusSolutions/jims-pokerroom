@@ -95,6 +95,53 @@
       linear-gradient(180deg, #0b0b0d 0%, #1a0a0e 50%, #0b0b0d 100%);
   }
 
+  /* Oval poker felt — used as a section stage */
+  .felt-table {
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 48%, #0f6b3c 0%, #0a4a2a 42%, #063820 72%, #041a10 100%);
+    box-shadow:
+      inset 0 0 0 3px rgba(201, 162, 39, 0.45),
+      inset 0 0 0 10px rgba(6, 56, 32, 0.9),
+      inset 0 0 80px rgba(0, 0, 0, 0.45),
+      0 40px 80px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Tournament clock / dealer board */
+  .clock-board {
+    background:
+      linear-gradient(180deg, #1a1a1f 0%, #0e0e12 100%);
+    border: 1px solid rgba(201, 162, 39, 0.35);
+    box-shadow:
+      inset 0 1px 0 rgba(240, 223, 168, 0.12),
+      0 0 0 4px rgba(12, 12, 14, 0.9),
+      0 0 0 5px rgba(201, 162, 39, 0.25),
+      0 30px 70px rgba(0, 0, 0, 0.55);
+  }
+
+  .clock-digit {
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 0 18px rgba(201, 162, 39, 0.35);
+  }
+
+  /* Gold rail strip like a table bumper */
+  .gold-rail {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(201, 162, 39, 0.15) 8%,
+      rgba(240, 223, 168, 0.55) 50%,
+      rgba(201, 162, 39, 0.15) 92%,
+      transparent
+    );
+  }
+
+  .chip-ring {
+    box-shadow:
+      inset 0 0 0 3px currentColor,
+      inset 0 0 0 6px rgba(5, 5, 6, 0.85),
+      inset 0 0 0 8px currentColor;
+  }
+
   .bracket { position: relative; }
   .bracket::before,
   .bracket::after {

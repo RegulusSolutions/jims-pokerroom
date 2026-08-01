@@ -8,14 +8,19 @@ export const images = {
   room: `${HOST}/2024/12/Home.jpg`,
   chipA: `${HOST}/2025/01/poker-chip-1-new2.png`,
   chipB: `${HOST}/2025/01/poker-chip-2-new-11.png`,
-  /** Colourful casino stock — used for hero atmosphere and floor showcase. */
+  /** Verified working colourful casino imagery + room shots. */
   casino: {
     hero: 'https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&w=2000&q=80',
     chips: 'https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&w=1400&q=80',
     cards: 'https://images.unsplash.com/photo-1541278107931-e006523892df?auto=format&fit=crop&w=1200&q=80',
     roulette: 'https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&w=1200&q=80',
-    felt: 'https://images.unsplash.com/photo-1518895312237-a9e235080b74?auto=format&fit=crop&w=1400&q=80',
-    dice: 'https://images.unsplash.com/photo-1528819622765-d6bcf201db90?auto=format&fit=crop&w=1000&q=80',
+    /** Room photography — replaces broken Unsplash felt/dice URLs */
+    felt: `${HOST}/2024/12/Home.jpg`,
+    table: `${HOST}/2025/04/Poker-at-lotus-tower-3-25.04-1-scaled.jpg`,
+    night: `${HOST}/2025/12/WhatsApp-Image-2025-12-28-at-6.41.59-PM.jpeg`,
+    series: `${HOST}/2026/03/WhatsApp-Image-2026-03-10-at-7.01.47-PM.jpeg`,
+    weekend: `${HOST}/2026/02/WhatsApp-Image-2026-02-16-at-5.13.55-PM.jpeg`,
+    cobra: `${HOST}/2025/04/Introducing-Poker-cobra-trubo-scaled.jpg`,
   },
 };
 
@@ -93,7 +98,7 @@ export const packages = [
       'Free valet parking',
       'Access to all nightly cash games',
     ],
-    image: `${HOST2}/2024/12/470191830_1412180076754766_147858955176354662_n.jpg`,
+    image: `${HOST}/2024/12/Home.jpg`,
   },
   {
     name: 'The Weekender',
@@ -107,7 +112,7 @@ export const packages = [
       'Complimentary food & beverage',
       'Guaranteed seat in weekend cash games',
     ],
-    image: `${HOST2}/2025/01/WhatsApp-Image-2025-01-29-at-12.58.34_35feeb77.jpg`,
+    image: `${HOST}/2026/02/WhatsApp-Image-2026-02-16-at-5.13.55-PM.jpeg`,
     featured: true,
   },
   {
@@ -122,7 +127,7 @@ export const packages = [
       'Private table for groups of six or more',
       'Dedicated host throughout the series',
     ],
-    image: `${HOST2}/2024/12/471324131_1421337012505739_7647817090469735492_n.jpg`,
+    image: `${HOST}/2026/03/WhatsApp-Image-2026-03-10-at-7.01.47-PM.jpeg`,
   },
 ] as const;
 
@@ -178,12 +183,11 @@ export const gallery = [
   { src: `${HOST}/2025/06/WhatsApp-Image-2025-06-28-at-12.04.40_7b5ef19f.jpg`, alt: 'Rookantha Gunathilake live at the room', span: 'tall' },
   { src: `${HOST}/2026/03/WhatsApp-Image-2026-03-10-at-7.01.47-PM.jpeg`, alt: 'Poker Mega Week' },
   { src: `${HOST}/2026/02/WhatsApp-Image-2026-02-16-at-5.13.55-PM.jpeg`, alt: 'Weekend deepstack final table' },
-  { src: `${HOST2}/2024/12/471324131_1421337012505739_7647817090469735492_n.jpg`, alt: 'Players at the table', span: 'wide' },
+  { src: `${HOST}/2025/12/WhatsApp-Image-2025-12-28-at-6.41.59-PM.jpeg`, alt: 'Nightly cash game', span: 'wide' },
   { src: `${HOST}/2026/02/WhatsApp-Image-2026-02-05-at-10.40.51-AM.jpeg`, alt: 'February poker weekend' },
-  { src: `${HOST2}/2024/12/470191830_1412180076754766_147858955176354662_n.jpg`, alt: 'The room on a busy night' },
   { src: `${HOST}/2026/01/WhatsApp-Image-2026-01-02-at-5.36.33-PM.jpeg`, alt: 'January poker weekend' },
   { src: `${HOST}/2025/04/WhatsApp-Image-2025-04-15-at-19.06.08_0e113694.jpg`, alt: 'Poker For All beginner night' },
-  { src: `${HOST}/2025/12/WhatsApp-Image-2025-12-28-at-6.41.59-PM.jpeg`, alt: 'Nightly cash game' },
+  { src: `${HOST}/2025/03/About-us-829x1024.png`, alt: 'Inside the room' },
 ] as const;
 
 /* -------------------------------------------------------------- the house */
