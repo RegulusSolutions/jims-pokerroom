@@ -3,8 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Armchair, Check, Dices } from 'lucide-react';
 import RouletteWheel from './RouletteWheel';
-import { images } from '@/lib/content';
+import { amenities, images } from '@/lib/content';
 
 const PILLARS = [
   { suit: '♠', title: 'Hold\'em nightly', note: 'The house game, every table' },
@@ -19,6 +20,9 @@ const STATS = [
   { value: '200m', label: 'Up' },
   { value: '6pm', label: 'Open' },
 ] as const;
+
+/** The edge — reuses the same verified facts shown on /about, kept short for this stage. */
+const EDGE_POINTS = amenities.slice(0, 4);
 
 /** Dense casino stage — photo walls, roulette, pillars. No empty center. */
 export default function CasinoSpectacle() {
@@ -81,7 +85,7 @@ export default function CasinoSpectacle() {
         </motion.div>
 
         {/* Main stage: left photo | roulette | right copy */}
-        <div className="mt-8 grid items-center gap-6 lg:grid-cols-[0.85fr_1fr_0.95fr] lg:gap-8">
+        <div className="mt-8 grid items-stretch gap-6 lg:grid-cols-[0.85fr_1fr_0.95fr] lg:gap-8">
           {/* Left collage */}
           <motion.div
             className="relative hidden h-full min-h-[420px] lg:block"
@@ -117,7 +121,7 @@ export default function CasinoSpectacle() {
 
           {/* Center roulette + wordmark */}
           <motion.div
-            className="relative mx-auto w-full max-w-[320px] py-4 sm:max-w-[380px]"
+            className="relative mx-auto flex w-full max-w-[320px] flex-col justify-center py-4 sm:max-w-[380px]"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -126,7 +130,7 @@ export default function CasinoSpectacle() {
             <RouletteWheel className="relative z-10" />
 
             {/* Hero wordmark — primary brand signal */}
-            <div className="relative z-10 mt-8 text-center">
+            <div className="relative z-10 mt-14 text-center">
               <div
                 className="relative mx-auto inline-block px-6 py-4 sm:px-10 sm:py-5"
                 style={{
@@ -162,7 +166,7 @@ export default function CasinoSpectacle() {
 
           {/* Right content panel */}
           <motion.div
-            className="relative border border-gold-500/30 p-7 sm:p-9"
+            className="relative flex h-full flex-col border border-gold-500/30 p-7 sm:p-9"
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -187,26 +191,41 @@ export default function CasinoSpectacle() {
               two hundred metres over the city.
             </p>
 
-            <div className="mt-8 grid grid-cols-4 gap-2 border-t border-gold-500/20 pt-6">
-              {STATS.map((s) => (
-                <div key={s.label} className="text-center">
-                  <p className="font-display text-[1.35rem] leading-none text-gold-200 sm:text-[1.55rem]">
-                    {s.value}
-                  </p>
-                  <p className="mt-2 font-mono text-[0.5rem] uppercase tracking-label text-bone/40">
-                    {s.label}
-                  </p>
-                </div>
+            {/* The edge — what the room actually gives you, filling the panel */}
+            <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2.5 border-t border-gold-500/20 pt-6">
+              {EDGE_POINTS.map((point) => (
+                <li key={point} className="flex items-start gap-2 text-[0.8rem] leading-snug text-bone/60">
+                  <Check size={14} strokeWidth={1.8} className="mt-0.5 shrink-0 text-gold-400" />
+                  <span>{point}</span>
+                </li>
               ))}
-            </div>
+            </ul>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/bookings" className="btn btn-solid">
-                Reserve a seat
-              </Link>
-              <Link href="/games" className="btn">
-                Tonight&rsquo;s games
-              </Link>
+            {/* Pinned to the base so this panel always reaches the floor of the stage */}
+            <div className="mt-auto">
+              <div className="mt-8 grid grid-cols-4 gap-2 border-t border-gold-500/20 pt-6">
+                {STATS.map((s) => (
+                  <div key={s.label} className="text-center">
+                    <p className="font-display text-[1.35rem] leading-none text-gold-200 sm:text-[1.55rem]">
+                      {s.value}
+                    </p>
+                    <p className="mt-2 font-mono text-[0.5rem] uppercase tracking-label text-bone/40">
+                      {s.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 flex gap-3">
+                <Link href="/bookings" className="btn btn-solid flex-1 flex-col gap-1.5 !py-4">
+                  <Armchair size={19} strokeWidth={1.4} />
+                  <span>Reserve a seat</span>
+                </Link>
+                <Link href="/games" className="btn flex-1 flex-col gap-1.5 !py-4">
+                  <Dices size={19} strokeWidth={1.4} />
+                  <span>Tonight&rsquo;s games</span>
+                </Link>
+              </div>
             </div>
           </motion.div>
         </div>

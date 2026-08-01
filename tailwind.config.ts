@@ -68,6 +68,10 @@ const config: Config = {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
+        gradientShift: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
       },
       animation: {
         rise:    'rise 1.1s cubic-bezier(.16,1,.3,1) forwards',
@@ -81,6 +85,7 @@ const config: Config = {
         dealIn:  'dealIn .9s cubic-bezier(.16,1,.3,1) forwards',
         neonPulse: 'neonPulse 3.2s ease-in-out infinite',
         ballOrbit: 'ballOrbit 9s linear infinite',
+        gradientShift: 'gradientShift 6s ease infinite',
       },
     },
   },

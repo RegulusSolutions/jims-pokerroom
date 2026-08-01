@@ -8,6 +8,14 @@ import { cn } from '@/lib/utils';
 
 type Shot = { readonly src: string; readonly alt: string; readonly span?: string };
 
+/** Fixed-row spans so the dense grid fills without leftover empty cells. */
+function spanClass(span: string | undefined, i: number) {
+  if (span === 'wide') return 'col-span-2 row-span-1';
+  if (span === 'tall') return 'col-span-1 row-span-2';
+  // Alternate mid heights for visual rhythm without leaving holes
+  return i % 5 === 0 ? 'row-span-2' : 'row-span-1';
+}
+
 export default function GalleryGrid({ shots }: { shots: readonly Shot[] }) {
   const [index, setIndex] = useState<number | null>(null);
 
@@ -33,15 +41,15 @@ export default function GalleryGrid({ shots }: { shots: readonly Shot[] }) {
 
   return (
     <>
-      <div className="grid auto-rows-[220px] grid-cols-2 gap-3 sm:auto-rows-[260px] lg:grid-cols-4">
+      {/* Fixed row height + dense flow — mixed sizes, no empty holes */}
+      <div className="grid auto-rows-[180px] grid-cols-2 grid-flow-dense gap-3 sm:auto-rows-[200px] sm:gap-4 md:grid-cols-3 lg:auto-rows-[220px] lg:grid-cols-4">
         {shots.map((s, i) => (
           <button
             key={s.src + i}
             onClick={() => setIndex(i)}
             className={cn(
-              'bracket group relative overflow-hidden border border-gold-500/20 bg-onyx',
-              s.span === 'wide' && 'lg:col-span-2',
-              s.span === 'tall' && 'row-span-2'
+              'bracket group relative h-full w-full overflow-hidden border border-gold-500/20 bg-onyx',
+              spanClass(s.span, i)
             )}
           >
             <Image
