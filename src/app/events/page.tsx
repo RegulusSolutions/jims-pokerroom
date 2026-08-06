@@ -20,7 +20,7 @@ export default function EventsPage() {
       <PageHero
         label="Upcoming events"
         lines={["What's", { text: 'coming up.', gold: true }]}
-        body="Buy-ins, structures and start times, published in advance. Seats are capped at eighteen across two tables, so tournament nights fill."
+        body="Buy-ins, structures and start times, published in advance. Tournament nights can fill, so reserve with a host ahead of time."
         image={images.casino.roulette}
       />
 

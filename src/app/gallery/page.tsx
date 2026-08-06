@@ -18,7 +18,7 @@ export default function GalleryPage() {
       <PageHero
         label="Gallery"
         lines={['The room,', { text: 'in play.', gold: true }]}
-        body="Tournament nights, final tables and the occasional live band, two hundred metres above Colombo."
+        body="Tournament nights, final tables and the occasional live band inside Casino Marina on Marine Drive."
         image={images.casino.table}
       />
 

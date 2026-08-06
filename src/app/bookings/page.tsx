@@ -18,7 +18,7 @@ export default function BookingsPage() {
       <PageHero
         label="Reservations"
         lines={['Hold me', { text: 'a seat.', gold: true }]}
-        body="Two tables, eighteen seats. Walk-ins are welcome any night, but if you want a specific stake or a tournament entry, tell us in advance."
+        body="A private multi-game lounge inside Casino Marina on Marine Drive. Walk-ins are welcome any night, but reserve ahead for a specific stake or tournament entry."
         image={images.casino.hero}
       />
 

@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Reveal from '@/components/ui/Reveal';
-import Counter from '@/components/ui/Counter';
-import { images } from '@/lib/content';
+import { images, roomFacts } from '@/lib/content';
 
 /** The flop — cinematic room reveal with spotlight glass panel. */
 export default function About() {
@@ -104,21 +103,21 @@ export default function About() {
                 </p>
 
                 <div className="mt-10 grid grid-cols-3 gap-3">
-                  {[
-                    { n: 2, s: '', label: 'Tables', glow: 'rgba(201,162,39,.35)' },
-                    { n: 9, s: '', label: 'Seats', glow: 'rgba(225,29,72,.3)' },
-                    { n: 6, s: 'pm', label: 'Doors', glow: 'rgba(22,163,74,.3)' },
-                  ].map((stat) => (
+                  {roomFacts.filter((fact) => fact.value !== '18+').map((fact, index) => (
                     <div
-                      key={stat.label}
+                      key={fact.label}
                       className="border border-gold-500/20 bg-ink/40 px-2 py-5 text-center"
-                      style={{ boxShadow: `inset 0 -2px 20px ${stat.glow}` }}
+                      style={{
+                        boxShadow: `inset 0 -2px 20px ${
+                          ['rgba(201,162,39,.35)', 'rgba(225,29,72,.3)', 'rgba(22,163,74,.3)'][index]
+                        }`,
+                      }}
                     >
                       <p className="font-display text-[2rem] leading-none text-gold-200 sm:text-[2.4rem]">
-                        <Counter value={stat.n} suffix={stat.s} />
+                        {fact.value}
                       </p>
                       <p className="mt-2.5 font-mono text-[0.52rem] uppercase tracking-label text-bone/40">
-                        {stat.label}
+                        {fact.label}
                       </p>
                     </div>
                   ))}

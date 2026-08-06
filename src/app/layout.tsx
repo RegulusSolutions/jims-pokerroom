@@ -61,7 +61,7 @@ const jsonLd = {
     '@type': 'PostalAddress',
     streetAddress: `${site.address.venue}, ${site.address.building}, ${site.address.street}`,
     addressLocality: 'Colombo',
-    postalCode: '01000',
+    postalCode: '00300',
     addressCountry: 'LK',
   },
   geo: { '@type': 'GeoCoordinates', latitude: site.address.lat, longitude: site.address.lng },

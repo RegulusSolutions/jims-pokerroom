@@ -5,9 +5,8 @@ import PageHero from '@/components/ui/PageHero';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
 import CtaBand from '@/components/ui/CtaBand';
-import Counter from '@/components/ui/Counter';
 import Atmosphere from '@/components/ui/Atmosphere';
-import { houseValues, amenities, images } from '@/lib/content';
+import { houseValues, amenities, images, roomFacts } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'About the room',
@@ -52,18 +51,13 @@ export default function AboutPage() {
 
             <Reveal delay={0.2}>
               <div className="velvet mt-12 grid grid-cols-2 gap-8 p-8 sm:grid-cols-4">
-                {[
-                  { n: 2, s: '', l: 'Tables' },
-                  { n: 9, s: '', l: 'Seats each' },
-                  { n: 3, s: '', l: 'Game types' },
-                  { n: 18, s: '+', l: 'Minimum age' },
-                ].map((s) => (
-                  <div key={s.l}>
+                {roomFacts.map((fact) => (
+                  <div key={fact.label}>
                     <p className="font-display text-[2.2rem] leading-none text-gold-400">
-                      <Counter value={s.n} suffix={s.s} />
+                      {fact.value}
                     </p>
                     <p className="mt-3 font-mono text-[0.58rem] uppercase tracking-label text-bone/40">
-                      {s.l}
+                      {fact.label}
                     </p>
                   </div>
                 ))}
