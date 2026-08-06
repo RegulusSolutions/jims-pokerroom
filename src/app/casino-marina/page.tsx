@@ -11,18 +11,18 @@ import { site } from '@/lib/site';
 import { images } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: 'Majestic Pride Casino',
+  title: 'Casino Marina Colombo',
   description:
-    "Jim's Poker Room sits inside Majestic Pride Casino on level AC6 of Colombo Lotus Tower.",
+    'Diamond Lounge is a private VIP lounge inside Casino Marina Colombo on Marine Drive.',
 };
 
-export default function MajesticPridePage() {
+export default function CasinoMarinaPage() {
   return (
     <>
       <PageHero
         label="Our home"
-        lines={['Inside', { text: 'Majestic Pride.', gold: true }]}
-        body="The poker room occupies its own space on level AC6 of Colombo Lotus Tower, within the Majestic Pride Casino floor."
+        lines={['Inside', { text: 'Casino Marina.', gold: true }]}
+        body="Diamond Lounge occupies its own lounge space within Casino Marina Colombo."
         image={images.casino.roulette}
       />
 
@@ -33,7 +33,7 @@ export default function MajesticPridePage() {
             <div className="bracket photo-frame relative aspect-[4/3]">
               <Image
                 src={images.room}
-                alt="Majestic Pride Casino at Colombo Lotus Tower"
+                alt="Casino Marina Colombo on Marine Drive"
                 fill
                 sizes="(max-width:1024px) 100vw, 45vw"
                 className="object-cover"
@@ -45,16 +45,15 @@ export default function MajesticPridePage() {
           <div className="space-y-6">
             <Reveal>
               <p className="lede">
-                Majestic Pride is the casino floor around us &mdash; tables, slots, restaurants and
-                a bar, all inside the tallest self-supporting structure in South Asia. Entry, ID
-                checks and the dress standard are handled at the casino entrance before you reach
-                the poker room.
+                Casino Marina is the venue around us &mdash; gaming floors, dining and a waterfront
+                setting on Marine Drive. Entry, ID checks and the dress standard are handled at the
+                casino entrance before you reach Diamond Lounge.
               </p>
             </Reveal>
             <Reveal delay={0.08}>
               <p className="lede">
-                The arrangement suits both sides. Players get a full venue with everything a night
-                out needs; we get to keep the poker room quiet and dedicated to one game.
+                Diamond Lounge is the private multi-game room inside that casino: dedicated tables,
+                attentive service and a quieter atmosphere away from the main floor.
               </p>
             </Reveal>
             <Reveal delay={0.14}>
@@ -64,7 +63,7 @@ export default function MajesticPridePage() {
                 rel="noopener noreferrer"
                 className="btn mt-4 inline-flex items-center gap-2"
               >
-                Visit Majestic Pride <ArrowUpRight size={14} strokeWidth={1.5} />
+                Visit Casino Marina <ArrowUpRight size={14} strokeWidth={1.5} />
               </a>
             </Reveal>
           </div>
@@ -78,16 +77,16 @@ export default function MajesticPridePage() {
           <div className="mt-14 grid gap-5 sm:grid-cols-3">
             {[
               {
-                t: 'Bring photo ID',
-                b: 'Checked at the casino entrance. Strictly 18 and over, no exceptions.',
+                t: 'Arrive at 30 Marine Drive',
+                b: 'Casino Marina Colombo sits on Marine Drive in Colombo 03. Parking and drop-off are at the venue entrance.',
               },
               {
-                t: 'Dress smart casual',
-                b: 'No beachwear, shorts or open sandals. The casino applies its own standard at the door.',
+                t: 'Enter Casino Marina',
+                b: 'Bring photo ID — strictly 18 and over. Dress smart casual; no beachwear, shorts or open sandals.',
               },
               {
-                t: 'Ask for the poker room',
-                b: 'We are on the same level. Staff at the entrance will point you through.',
+                t: 'Ask for Diamond Lounge',
+                b: 'Staff at the entrance will direct you to our private lounge on the gaming floor.',
               },
             ].map((c, i) => (
               <Reveal key={c.t} delay={i * 0.07}>
