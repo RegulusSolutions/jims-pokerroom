@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: 'Privacy policy' };
 const sections = [
   {
     t: 'What we collect',
-    b: 'When you send a seat request we collect your name, phone number, preferred date and any notes you add. If you visit the room, Majestic Pride records your ID at the entrance under its own casino licensing obligations.',
+    b: 'When you send a seat request we collect your name, phone number, preferred date and any notes you add. If you visit the room, Casino Marina records your ID at the entrance under its own casino licensing obligations.',
   },
   {
     t: 'Why we collect it',

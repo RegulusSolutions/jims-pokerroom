@@ -10,7 +10,7 @@ import { images } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Past events',
-  description: "Archive of tournaments, series and live nights at Jim's Poker Room, Colombo.",
+  description: 'Archive of tournaments, series and live nights at Diamond Lounge, Casino Marina Colombo.',
 };
 
 export default function PastEventsPage() {

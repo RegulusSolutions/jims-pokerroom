@@ -21,7 +21,7 @@ export default function HomePage() {
           'Omaha Hi',
           'Omaha Hi/Lo',
           'Cash & tournaments',
-          'Lotus Tower AC6',
+          'Casino Marina',
           'Open 6pm',
         ]}
       />

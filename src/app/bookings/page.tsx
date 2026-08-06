@@ -9,7 +9,7 @@ import { images } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Reserve a seat',
-  description: `Reserve a seat at ${site.name}, Colombo Lotus Tower. Cash games, tournaments and private tables.`,
+  description: `Reserve a seat at ${site.name} inside Casino Marina Colombo. Cash games, tournaments and private tables.`,
 };
 
 export default function BookingsPage() {
@@ -76,8 +76,8 @@ export default function BookingsPage() {
                   ))}
                 </ul>
                 <p className="mt-7 border-t border-gold-500/15 pt-5 text-[0.82rem] leading-relaxed text-bone/45">
-                  Strictly 18+. Photo ID is checked at the Majestic Pride entrance before you reach
-                  the poker room.
+                  Strictly 18+. Photo ID is checked at the Casino Marina entrance before you reach
+                  Diamond Lounge.
                 </p>
               </div>
             </Reveal>

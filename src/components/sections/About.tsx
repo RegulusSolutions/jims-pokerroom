@@ -33,7 +33,7 @@ export default function About() {
             <div className="relative h-full min-h-[420px] overflow-hidden border border-gold-500/30 sm:min-h-[520px]">
               <Image
                 src={images.room}
-                alt="The poker room at Colombo Lotus Tower"
+                alt="Inside Diamond Lounge at Casino Marina"
                 fill
                 sizes="(max-width:1024px) 100vw, 55vw"
                 className="object-cover"
@@ -48,7 +48,7 @@ export default function About() {
                 style={{ boxShadow: '0 20px 50px rgba(0,0,0,.4), inset 0 1px 0 rgba(240,223,168,.12)' }}
               >
                 <p className="font-mono text-[0.58rem] uppercase tracking-label text-gold-400">
-                  Lotus Tower · Level AC6
+                  Diamond Lounge · Casino Marina
                 </p>
                 <p className="mt-3 font-display text-[1.55rem] leading-snug text-gold-100">
                   Dedicated felt.
@@ -93,15 +93,14 @@ export default function About() {
                 <div className="mt-6 h-px w-20 bg-gold-line" />
 
                 <p className="lede mt-7">
-                  Jim&rsquo;s isn&rsquo;t a casino floor with a poker table pushed into the corner.
-                  It&rsquo;s a dedicated room inside Majestic Pride at Lotus Tower, built for people
-                  who came to play cards &mdash; casual players on a Friday and serious regulars
-                  grinding a structure, in the same nine seats.
+                  Diamond Lounge brings private-table service to Casino Marina. It is built for
+                  people who came to play cards &mdash; casual players on a Friday and serious
+                  regulars enjoying a structured game in the same lounge.
                 </p>
                 <p className="lede mt-5">
-                  We spread Hold&rsquo;em every night and Omaha most nights, with published blind
-                  structures and dealers who keep the hands moving. Food and drink are on the house
-                  while you&rsquo;re seated.
+                  Hold&rsquo;em and Omaha share the felt with Teen Patti, Andar Bahar, Blackjack and
+                  Baccarat. Professional dealers keep the action moving, with food and drink on the
+                  house while you&rsquo;re seated.
                 </p>
 
                 <div className="mt-10 grid grid-cols-3 gap-3">

@@ -11,7 +11,7 @@ import { images } from '@/lib/content';
 export const metadata: Metadata = {
   title: 'Upcoming events',
   description:
-    "Tournament calendar for Jim's Poker Room — Poker Mega Week, Cobra Turbo, weekend deepstacks and nightly cash games at Colombo Lotus Tower.",
+    "Tournament calendar for Diamond Lounge at Casino Marina — Poker Mega Week, Cobra Turbo, weekend deepstacks and nightly cash games.",
 };
 
 export default function EventsPage() {

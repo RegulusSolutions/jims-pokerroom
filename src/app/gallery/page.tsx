@@ -9,7 +9,7 @@ import { gallery, images } from '@/lib/content';
 export const metadata: Metadata = {
   title: 'Gallery',
   description:
-    "Inside Jim's Poker Room — tournament nights, final tables and live events at Colombo Lotus Tower.",
+    'Inside Diamond Lounge at Casino Marina — tournament nights, final tables and live events in Colombo.',
 };
 
 export default function GalleryPage() {

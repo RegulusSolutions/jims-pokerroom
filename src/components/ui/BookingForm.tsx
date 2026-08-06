@@ -89,7 +89,7 @@ export default function BookingForm() {
       </div>
 
       <p className="font-mono text-[0.64rem] leading-relaxed tracking-wide text-ash">
-        Strictly 18+. Bring photo ID — Majestic Pride checks it at the entrance.
+        Strictly 18+. Bring photo ID — it is checked at the Casino Marina entrance.
       </p>
 
       <button type="submit" className="btn btn-solid w-full sm:w-auto">

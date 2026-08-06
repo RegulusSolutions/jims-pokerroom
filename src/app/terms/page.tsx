@@ -6,7 +6,7 @@ import { site } from '@/lib/site';
 export const metadata: Metadata = { title: 'Terms & conditions' };
 
 const sections = [
-  { t: 'Entry', b: 'Entry is restricted to persons 18 years and over. Photo ID is required and admission is at the discretion of Majestic Pride Casino and its door staff.' },
+  { t: 'Entry', b: 'Entry is restricted to persons 18 years and over. Photo ID is required and admission is at the discretion of Casino Marina and its door staff.' },
   { t: 'Reservations', b: 'A seat request is a request, not a confirmed booking, until a host confirms it by phone or message. Unclaimed seats are released fifteen minutes after a tournament starts.' },
   { t: 'Game rules', b: 'All games run under the published house rules. The floor decision is final in the interest of fairness, including on disputed hands, misdeals and player conduct.' },
   { t: 'Conduct', b: 'We reserve the right to remove any player for abusive behaviour, collusion, soft play, chip dumping or interfering with the running of a game.' },

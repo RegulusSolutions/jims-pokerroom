@@ -10,7 +10,7 @@ import { site } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'FAQ',
   description:
-    "Common questions about playing at Jim's Poker Room — booking, stakes, dress code, age limits and packages.",
+    'Common questions about Diamond Lounge at Casino Marina — booking, stakes, dress code, age limits and packages.',
 };
 
 const jsonLd = {

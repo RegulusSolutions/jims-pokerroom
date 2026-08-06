@@ -80,7 +80,7 @@ export default function CasinoSpectacle() {
             </p>
           </div>
           <p className="font-mono text-[0.58rem] uppercase tracking-label text-bone/50">
-            Lotus Tower · AC6 · Colombo
+            Diamond Lounge · Casino Marina · Colombo
           </p>
         </motion.div>
 
@@ -145,7 +145,7 @@ export default function CasinoSpectacle() {
                 <div className="absolute -bottom-1 -right-1 h-4 w-4 border-b-2 border-r-2 border-gold-300" />
 
                 <p className="relative font-mono text-[0.55rem] uppercase tracking-[0.45em] text-gold-400/90">
-                  Est. poker room
+                  Private lounge
                 </p>
                 <h2
                   className="relative mt-2 font-display text-[clamp(3.2rem,9vw,5.5rem)] leading-[0.9] tracking-[0.16em] gold-text"
@@ -154,11 +154,11 @@ export default function CasinoSpectacle() {
                       'drop-shadow(0 0 18px rgba(201,162,39,.55)) drop-shadow(0 0 40px rgba(240,223,168,.25))',
                   }}
                 >
-                  JIM&rsquo;S
+                  DIAMOND
                 </h2>
                 <div className="relative mx-auto mt-3 h-px w-24 bg-gold-line opacity-80" />
                 <p className="relative mt-3 font-mono text-[0.68rem] uppercase tracking-[0.42em] text-gold-200">
-                  Poker Room
+                  Casino Marina
                 </p>
               </div>
             </div>

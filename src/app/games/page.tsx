@@ -9,7 +9,7 @@ import { games, blindLevels, images } from '@/lib/content';
 export const metadata: Metadata = {
   title: 'Games & stakes',
   description:
-    "Texas Hold'em, Omaha Hi and Omaha Hi/Lo cash games plus tournament structures at Jim's Poker Room, Colombo.",
+    "Texas Hold'em, Omaha, Teen Patti, Andar Bahar, Blackjack and Baccarat at Diamond Lounge inside Casino Marina Colombo.",
 };
 
 const houseRules = [

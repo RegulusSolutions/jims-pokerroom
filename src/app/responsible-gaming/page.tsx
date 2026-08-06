@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const points = [
   {
     t: 'Strictly 18 and over',
-    b: 'Photo ID is checked at the entrance to Majestic Pride. Anyone unable to prove they are 18 will not be seated, and we do not make exceptions.',
+    b: 'Photo ID is checked at the Casino Marina entrance. Anyone unable to prove they are 18 will not be seated, and we do not make exceptions.',
   },
   {
     t: 'Decide your limit before you sit',
