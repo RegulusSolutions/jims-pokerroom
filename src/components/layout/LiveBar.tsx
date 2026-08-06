@@ -57,7 +57,7 @@ export default function LiveBar() {
           Doors open in <span className="text-gold-200">{left}</span>
         </span>
         <span className="hidden text-gold-500/40 md:inline">/</span>
-        <span className="hidden md:inline">Lotus Tower &middot; AC6</span>
+        <span className="hidden md:inline">Casino Marina &middot; Colombo</span>
       </div>
     </div>
   );

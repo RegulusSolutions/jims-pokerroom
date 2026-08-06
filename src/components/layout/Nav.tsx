@@ -41,10 +41,10 @@ export default function Nav() {
         <div className="shell flex items-center justify-between py-5">
           <Link href="/" className="group flex items-baseline gap-2" aria-label={site.name}>
             <span className="font-display text-[1.02rem] uppercase tracking-[0.16em] text-bone">
-              Jim&rsquo;s
+              Diamond
             </span>
             <span className="font-display text-[1.02rem] uppercase tracking-[0.16em] text-gold-500 transition-colors group-hover:text-gold-200">
-              Poker Room
+              Lounge
             </span>
           </Link>
 
