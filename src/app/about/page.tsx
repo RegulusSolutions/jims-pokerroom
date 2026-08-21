@@ -5,14 +5,13 @@ import PageHero from '@/components/ui/PageHero';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
 import CtaBand from '@/components/ui/CtaBand';
-import Counter from '@/components/ui/Counter';
 import Atmosphere from '@/components/ui/Atmosphere';
-import { houseValues, amenities, images } from '@/lib/content';
+import { houseValues, amenities, images, roomFacts } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'About the room',
   description:
-    "Jim's Poker Room is a dedicated poker room inside Majestic Pride at Colombo Lotus Tower, focused exclusively on Hold'em and Omaha cash games and tournaments.",
+    'Diamond Lounge is a private multi-game lounge inside Casino Marina Colombo, with cards, table games and host-led service.',
 };
 
 export default function AboutPage() {
@@ -21,7 +20,7 @@ export default function AboutPage() {
       <PageHero
         label="Who are we"
         lines={['A room built', { text: 'for the game.', gold: true }]}
-        body="Not as large as the country's major casinos, and deliberately so. Jim's has carved out a niche in the local poker scene by doing one thing properly."
+        body="A private multi-game lounge inside Casino Marina, bringing cards, table games and thoughtful host service together."
         image={images.room}
       />
 
@@ -31,20 +30,16 @@ export default function AboutPage() {
           <div className="space-y-6">
             <Reveal>
               <p className="lede">
-                Jim&rsquo;s Poker Room in Sri Lanka is known for offering a dedicated and intimate
-                environment for poker enthusiasts. While not as large as some of the country&rsquo;s
-                major casinos, it has carved out a niche within the local poker scene by focusing
-                exclusively on poker games and tournaments. The room attracts both casual players and
-                serious competitors looking for well-structured games in a friendly and professional
-                setting.
+                Diamond Lounge is an intimate space inside Casino Marina Colombo for guests who want
+                more from a night out. Cards, table games and a polished, professional atmosphere
+                bring casual players and serious regulars together in one private lounge.
               </p>
             </Reveal>
             <Reveal delay={0.08}>
               <p className="lede">
-                The room primarily spreads Texas Hold&rsquo;em cash games at stakes to suit different
-                levels of play, with pot limit Omaha running alongside on most nights. Tournaments
-                follow competitive formats across a range of buy-ins, so newcomers and experienced
-                players can both find a structure worth entering.
+                Texas Hold&rsquo;em and Omaha are joined by Teen Patti, Andar Bahar, Blackjack and
+                Baccarat. From cash tables to tournament structures and classic casino games, there
+                is a table for every kind of player.
               </p>
             </Reveal>
             <Reveal delay={0.14}>
@@ -56,18 +51,13 @@ export default function AboutPage() {
 
             <Reveal delay={0.2}>
               <div className="velvet mt-12 grid grid-cols-2 gap-8 p-8 sm:grid-cols-4">
-                {[
-                  { n: 2, s: '', l: 'Tables' },
-                  { n: 9, s: '', l: 'Seats each' },
-                  { n: 3, s: '', l: 'Game types' },
-                  { n: 18, s: '+', l: 'Minimum age' },
-                ].map((s) => (
-                  <div key={s.l}>
+                {roomFacts.map((fact) => (
+                  <div key={fact.label}>
                     <p className="font-display text-[2.2rem] leading-none text-gold-400">
-                      <Counter value={s.n} suffix={s.s} />
+                      {fact.value}
                     </p>
                     <p className="mt-3 font-mono text-[0.58rem] uppercase tracking-label text-bone/40">
-                      {s.l}
+                      {fact.label}
                     </p>
                   </div>
                 ))}
@@ -79,7 +69,7 @@ export default function AboutPage() {
             <div className="bracket photo-frame relative aspect-[3/4]">
               <Image
                 src={images.about}
-                alt="Inside Jim's Poker Room"
+                alt="Inside Diamond Lounge at Casino Marina"
                 fill
                 sizes="(max-width:1024px) 100vw, 40vw"
                 className="object-cover"

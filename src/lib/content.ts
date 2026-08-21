@@ -31,7 +31,7 @@ export const games = [
     code: 'NLH',
     detail: 'No limit',
     body:
-      'The house game. Two hole cards, five community cards, no cap on what you can bet. Cash tables run every night from six, and every tournament on the calendar is Hold\u2019em unless it says otherwise.',
+      'Two hole cards, five community cards, no cap on what you can bet. Cash tables run every night from six, and every tournament on the calendar is Hold\'em unless it says otherwise.',
     stakes: ['100 / 200', '200 / 400', '500 / 1,000'],
   },
   {
@@ -39,15 +39,47 @@ export const games = [
     code: 'PLO',
     detail: 'Pot limit',
     body:
-      'Four hole cards, exactly two of which play. Bigger pots, bigger swings, and the game most of our regulars move to once Hold\u2019em stops feeling loose enough.',
+      'Four hole cards, exactly two of which play. Bigger pots, bigger swings — the game regulars move to when Hold\'em stops feeling loose enough.',
     stakes: ['200 / 400', '500 / 1,000'],
+  },
+  {
+    name: 'Teen Patti',
+    code: 'TP',
+    detail: 'Three cards',
+    body:
+      'Classic three-card showdown with blind, chaal and show. Fast rounds, familiar to most players walking in from the Marina floor.',
+    stakes: ['Table limits on request'],
+  },
+  {
+    name: 'Andar Bahar',
+    code: 'AB',
+    detail: 'Side betting',
+    body:
+      'One joker, two sides. Cards deal until a match lands on Andar or Bahar. Simple to learn, quick to play, open whenever the lounge is live.',
+    stakes: ['Table limits on request'],
+  },
+  {
+    name: 'Blackjack',
+    code: 'BJ',
+    detail: 'Table game',
+    body:
+      'Hit, stand, double, split — beat the dealer to 21 without going over. Standard casino rules with lounge-side service at the table.',
+    stakes: ['Table limits on request'],
+  },
+  {
+    name: 'Baccarat',
+    code: 'BAC',
+    detail: 'Table game',
+    body:
+      'Player, Banker or Tie. Clean rounds, clear odds, and the calm pace a private lounge is built for.',
+    stakes: ['Table limits on request'],
   },
   {
     name: 'Omaha Hi/Lo',
     code: 'PLO8',
     detail: 'Pot limit, split pot',
     body:
-      'The pot splits between the best high hand and the best qualifying low. Runs on demand \u2014 call ahead and we will open a table if there is interest.',
+      'The pot splits between the best high hand and the best qualifying low. Opens on request when there is enough interest.',
     stakes: ['On request'],
   },
 ] as const;
@@ -66,8 +98,8 @@ export const blindLevels = [
 
 /* ------------------------------------------------------------- room facts */
 export const roomFacts = [
-  { value: '2', label: 'Dedicated tables' },
-  { value: '9', label: 'Seats per table' },
+  { value: 'VIP', label: 'Private lounge' },
+  { value: 'Multi', label: 'Game tables' },
   { value: '18+', label: 'Minimum age' },
   { value: '6pm', label: 'Doors open' },
 ] as const;
@@ -91,12 +123,13 @@ export const packages = [
     name: 'The Seat',
     price: 'Complimentary',
     for: 'Local players',
-    body: 'Walk in, buy in, play. Food and beverage are on the house for anyone seated in a live game.',
+    body:
+      'Walk in through Casino Marina, take a seat in the Diamond Lounge, and play. Food and beverage are on the house for anyone seated in a live game.',
     includes: [
       'Complimentary food & beverage while seated',
       'Seat reservation by phone',
-      'Free valet parking',
-      'Access to all nightly cash games',
+      'Free valet parking at Casino Marina',
+      'Access to nightly cash games and table games in the lounge',
     ],
     image: `${HOST}/2024/12/Home.jpg`,
   },
@@ -104,13 +137,14 @@ export const packages = [
     name: 'The Weekender',
     price: 'On request',
     for: 'Visiting players',
-    body: 'Two nights in Colombo built around a tournament weekend, with the hotel and transfers handled for you.',
+    body:
+      'Two nights in Colombo built around a tournament weekend at Casino Marina, with hotel and transfers handled for you.',
     includes: [
       'Two nights at a partner hotel',
-      'Airport and venue transfers',
+      'Airport and Marina transfers',
       'One tournament buy-in',
-      'Complimentary food & beverage',
-      'Guaranteed seat in weekend cash games',
+      'Complimentary food & beverage in the lounge',
+      'Priority seating for weekend cash games',
     ],
     image: `${HOST}/2026/02/WhatsApp-Image-2026-02-16-at-5.13.55-PM.jpeg`,
     featured: true,
@@ -118,14 +152,15 @@ export const packages = [
   {
     name: 'The Series',
     price: 'On request',
-    for: 'Groups and Mega Week',
-    body: 'A full Mega Week package for players flying in for the series, including flights on qualifying buy-ins.',
+    for: 'Groups and series players',
+    body:
+      'A full stay package for players flying in for a tournament series at Casino Marina, including travel assistance on qualifying buy-ins.',
     includes: [
       'Flight assistance on qualifying buy-ins',
       'Seven nights accommodation',
-      'All Mega Week tournament entries',
-      'Private table for groups of six or more',
-      'Dedicated host throughout the series',
+      'Scheduled tournament entries for the series',
+      'Private lounge table for groups of six or more',
+      'Dedicated host throughout your stay',
     ],
     image: `${HOST}/2026/03/WhatsApp-Image-2026-03-10-at-7.01.47-PM.jpeg`,
   },
@@ -135,77 +170,77 @@ export const packages = [
 export const faqs = [
   {
     q: 'Do I need to book, or can I walk in?',
-    a: 'You can walk in any night we are open. If you want a specific stake or a seat during Mega Week, call +94 70 779 8888 ahead and we will hold one \u2014 the room only has two tables, so busy nights fill.',
+    a: 'You can walk in any night we are open. Enter through Casino Marina Colombo on Marine Drive and ask for the Diamond Lounge. For a specific stake or a guaranteed seat on a busy weekend, call +94 11 421 9988 ahead and we will hold one for you.',
   },
   {
     q: 'What is the minimum age?',
-    a: 'Eighteen. Bring photo ID; the casino checks it at the entrance to Majestic Pride before you reach the poker room.',
+    a: 'Eighteen. Bring photo ID; Casino Marina checks it at the main entrance before you reach the lounge.',
   },
   {
     q: 'Which games do you spread?',
-    a: "Texas Hold'em is the house game and runs every night. Pot limit Omaha Hi runs most nights, and we will open an Omaha Hi/Lo table on request if there is enough interest.",
+    a: "Hold'em and Omaha run most nights. Teen Patti, Andar Bahar, Blackjack and Baccarat are available in the lounge, and Omaha Hi/Lo opens on request when there is enough interest.",
   },
   {
     q: 'What are the stakes?',
-    a: 'Cash games start at 100 / 200 and run up to 500 / 1,000 depending on the night and the field. Higher stakes can be arranged for a private table.',
+    a: 'Cash games start at 100 / 200 and run up to 500 / 1,000 depending on the night and the field. Table limits for card games and higher poker stakes can be arranged — ask the host.',
   },
   {
     q: 'Is there a dress code?',
-    a: 'Smart casual. No beachwear, shorts or open sandals \u2014 Majestic Pride applies its own dress standard at the entrance.',
+    a: 'Smart casual. No beachwear, shorts or open sandals — Casino Marina applies its dress standard at the entrance.',
   },
   {
     q: 'Do you cover food and drinks?',
-    a: 'Yes. Food and beverage are complimentary for anyone seated in a live game.',
+    a: 'Yes. Food and beverage are complimentary for anyone seated in a live game in the Diamond Lounge.',
   },
   {
     q: 'Can you arrange a hotel and airport transfer?',
-    a: 'Yes, through our packages. Visiting players on qualifying buy-ins can have accommodation, transfers and in some cases flights arranged \u2014 talk to a host when you book.',
+    a: 'Yes, through our packages. Visiting players on qualifying buy-ins can have accommodation, transfers and in some cases flights arranged — talk to a host when you book.',
   },
   {
     q: 'How do I get there and where do I park?',
-    a: 'The room is on level AC6 of Colombo Lotus Tower, inside Majestic Pride Casino. Valet parking at the tower is free for players.',
+    a: 'Diamond Lounge is inside Casino Marina Colombo at 30 Marine Drive, Colombo 03. Valet parking at the Marina is free for players.',
   },
   {
     q: 'Are you open on Poya days?',
-    a: 'No. The room is closed on Poya days and on Sundays, in line with Sri Lankan gaming regulations.',
+    a: 'No. The lounge is closed on Poya days and on Sundays, in line with Sri Lankan gaming regulations.',
   },
   {
     q: 'Can I organise a private game?',
-    a: 'Yes. We can close a table for groups of six or more with your own dealer. Give us a few days notice.',
+    a: 'Yes. We can reserve a lounge table for groups of six or more with your own dealer. Give us a few days notice.',
   },
 ] as const;
 
 /* ---------------------------------------------------------------- gallery */
 export const gallery = [
-  { src: `${HOST}/2024/12/Home.jpg`, alt: 'The poker room at Lotus Tower', span: 'wide' },
-  { src: `${HOST}/2025/04/Poker-at-lotus-tower-3-25.04-1-scaled.jpg`, alt: 'Tournament night in progress' },
-  { src: `${HOST}/2025/04/Introducing-Poker-cobra-trubo-scaled.jpg`, alt: 'Poker Cobra Turbo' },
-  { src: `${HOST}/2025/06/WhatsApp-Image-2025-06-28-at-12.04.40_7b5ef19f.jpg`, alt: 'Rookantha Gunathilake live at the room', span: 'tall' },
-  { src: `${HOST}/2026/03/WhatsApp-Image-2026-03-10-at-7.01.47-PM.jpeg`, alt: 'Poker Mega Week' },
+  { src: `${HOST}/2024/12/Home.jpg`, alt: 'Diamond Lounge at Casino Marina Colombo', span: 'wide' },
+  { src: `${HOST}/2025/04/Poker-at-lotus-tower-3-25.04-1-scaled.jpg`, alt: 'Tournament night in the lounge' },
+  { src: `${HOST}/2025/04/Introducing-Poker-cobra-trubo-scaled.jpg`, alt: 'Turbo tournament format at Diamond Lounge' },
+  { src: `${HOST}/2025/06/WhatsApp-Image-2025-06-28-at-12.04.40_7b5ef19f.jpg`, alt: 'Live entertainment at Casino Marina', span: 'tall' },
+  { src: `${HOST}/2026/03/WhatsApp-Image-2026-03-10-at-7.01.47-PM.jpeg`, alt: 'Tournament series at Diamond Lounge' },
   { src: `${HOST}/2026/02/WhatsApp-Image-2026-02-16-at-5.13.55-PM.jpeg`, alt: 'Weekend deepstack final table' },
-  { src: `${HOST}/2025/12/WhatsApp-Image-2025-12-28-at-6.41.59-PM.jpeg`, alt: 'Nightly cash game', span: 'wide' },
-  { src: `${HOST}/2026/02/WhatsApp-Image-2026-02-05-at-10.40.51-AM.jpeg`, alt: 'February poker weekend' },
-  { src: `${HOST}/2026/01/WhatsApp-Image-2026-01-02-at-5.36.33-PM.jpeg`, alt: 'January poker weekend' },
-  { src: `${HOST}/2025/04/WhatsApp-Image-2025-04-15-at-19.06.08_0e113694.jpg`, alt: 'Poker For All beginner night' },
-  { src: `${HOST}/2025/03/About-us-829x1024.png`, alt: 'Inside the room' },
+  { src: `${HOST}/2025/12/WhatsApp-Image-2025-12-28-at-6.41.59-PM.jpeg`, alt: 'Nightly cash game in the lounge', span: 'wide' },
+  { src: `${HOST}/2026/02/WhatsApp-Image-2026-02-05-at-10.40.51-AM.jpeg`, alt: 'February poker weekend at Marina' },
+  { src: `${HOST}/2026/01/WhatsApp-Image-2026-01-02-at-5.36.33-PM.jpeg`, alt: 'January poker weekend at Diamond Lounge' },
+  { src: `${HOST}/2025/04/WhatsApp-Image-2025-04-15-at-19.06.08_0e113694.jpg`, alt: 'Beginner-friendly poker night' },
+  { src: `${HOST}/2025/03/About-us-829x1024.png`, alt: 'Inside Diamond Lounge' },
 ] as const;
 
 /* -------------------------------------------------------------- the house */
 export const houseValues = [
   {
-    title: 'One game, done properly',
-    body: 'We are not a casino floor with a poker table pushed into the corner. The whole room exists for cards, which is why the structures are published, the dealers are trained and the games actually run on time.',
+    title: 'A lounge, not a corner table',
+    body: 'Diamond Lounge is a private room inside Casino Marina — dedicated space, proper lighting and service, with Hold\'em, table games and regional favourites under one roof.',
   },
   {
     title: 'Croupiers who deal, not chat',
     body: 'Every table is run by a professional croupier. Hands per hour is the number that decides whether a night was worth your time, and we protect it.',
   },
   {
-    title: 'Stakes for whoever sits down',
-    body: 'A first-timer on 100 / 200 and a regular at 500 / 1,000 are in the same room on the same night. Nobody gets moved off a table for playing small.',
+    title: 'Stakes and games for whoever sits down',
+    body: 'From 100 / 200 Hold\'em to pot-limit Omaha and table limits on Teen Patti or Baccarat — the mix changes with the crowd, not with your buy-in.',
   },
   {
-    title: 'A view nobody else has',
-    body: 'Level AC6 of Lotus Tower, two hundred metres over Colombo. It is a good place to lose a flip and still enjoy the evening.',
+    title: 'Marine Drive, done right',
+    body: 'Casino Marina sits on the waterfront in Colombo 03. The lounge is where you step away from the main floor without leaving the building.',
   },
 ] as const;

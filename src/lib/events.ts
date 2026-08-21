@@ -19,7 +19,7 @@ export const events: PokerEvent[] = [
   {
     slug: 'poker-cobra-turbo',
     title: 'Poker Cobra Turbo',
-    kicker: 'Mega Week headline',
+    kicker: 'Tournament night',
     date: '2026-08-08T19:00:00+05:30',
     dateLabel: '8 August 2026 · 7:00 pm',
     buyIn: 'LKR 25,000 + 5,000',
@@ -33,7 +33,7 @@ export const events: PokerEvent[] = [
   },
   {
     slug: 'poker-mega-week',
-    title: 'Poker Mega Week',
+    title: 'Lounge Mega Week',
     kicker: 'Seven nights, seven structures',
     date: '2026-08-03T19:00:00+05:30',
     dateLabel: '3 – 9 August 2026',
@@ -41,7 +41,7 @@ export const events: PokerEvent[] = [
     stack: 'Varies by event',
     format: 'Seven consecutive tournament nights',
     blurb:
-      'A full week of tournament poker, one structure per night, closing with the Cobra Turbo. Day-one entries carry a leaderboard score across the whole series.',
+      'Seven nights of tournament poker at Diamond Lounge, Casino Marina — one structure each evening, closing with the Cobra Turbo. Day-one entries carry a leaderboard score across the whole series.',
     image: `${HOST}/2026/03/WhatsApp-Image-2026-03-10-at-7.01.47-PM.jpeg`,
     status: 'upcoming',
     featured: true,
@@ -68,9 +68,9 @@ export const events: PokerEvent[] = [
     dateLabel: 'Nightly from 6:00 pm',
     buyIn: 'From LKR 10,000',
     stack: '100 big blinds recommended',
-    format: "Texas Hold'em · Omaha Hi · Omaha Hi/Lo",
+    format: "Hold'em · Omaha · Teen Patti · Andar Bahar · Blackjack · Baccarat",
     blurb:
-      'Cash tables open at six and run until the last seat empties. Call ahead and we will hold a seat at the stake you want.',
+      'Cash tables open at six with the full mix — Hold\'em, Omaha, Teen Patti, Andar Bahar, Blackjack and Baccarat — running until the last seat empties. Call ahead and we will hold a seat at the stake you want.',
     image: `${HOST}/2025/12/WhatsApp-Image-2025-12-28-at-6.41.59-PM.jpeg`,
     status: 'upcoming',
   },
@@ -105,7 +105,7 @@ export const events: PokerEvent[] = [
   {
     slug: 'non-stop-poker-action',
     title: 'Non-Stop Poker Action',
-    kicker: 'Lotus Tower series',
+    kicker: 'Holiday series',
     date: '2025-04-25T19:00:00+05:30',
     dateLabel: '25 April 2025',
     buyIn: 'LKR 20,000',

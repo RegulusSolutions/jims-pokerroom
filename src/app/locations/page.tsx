@@ -10,14 +10,14 @@ import { images } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Find us',
-  description: `${site.name} is on level AC6 of Colombo Lotus Tower, inside Majestic Pride Casino. Directions, hours and parking.`,
+  description: `${site.name} is inside Casino Marina on Marine Drive in Colombo 03. Directions, hours and arrival details.`,
 };
 
 const gettingHere = [
   {
     Icon: Car,
     t: 'By car',
-    b: 'Enter from D. R. Wijewardena Mawatha. Valet parking at the tower is free for players — mention the poker room.',
+    b: 'Head to Casino Marina at 30 Marine Drive, Colombo 03. Contact a host before you arrive for parking and entrance guidance.',
   },
   {
     Icon: Plane,
@@ -27,7 +27,7 @@ const gettingHere = [
   {
     Icon: MapPin,
     t: 'Once inside',
-    b: 'Take the lift to AC6 and follow signs for Majestic Pride. The poker room is on the same level.',
+    b: 'Enter through Casino Marina and follow signs for Diamond Lounge. A host can help with directions on arrival.',
   },
 ];
 
@@ -36,8 +36,8 @@ export default function LocationsPage() {
     <>
       <PageHero
         label="Find us"
-        lines={['Level AC6,', { text: 'Lotus Tower.', gold: true }]}
-        body="Two hundred metres above Colombo, inside Majestic Pride Casino. You can see the building from most of the city, which makes it hard to get lost."
+        lines={['Casino Marina,', { text: 'Marine Drive.', gold: true }]}
+        body="Diamond Lounge is inside Casino Marina at 30 Marine Drive, Colombo 03. Contact a host before you travel for the smoothest arrival."
         image={images.casino.felt}
       />
 
@@ -47,7 +47,7 @@ export default function LocationsPage() {
           <Reveal>
             <div className="bracket photo-frame h-[440px] sm:h-[520px]">
               <iframe
-                title="Map to Jim's Poker Room"
+                title="Map to Diamond Lounge"
                 src={`https://www.google.com/maps?q=${site.address.mapsQuery}&output=embed`}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -72,7 +72,7 @@ export default function LocationsPage() {
               {
                 Icon: Phone,
                 t: 'Reservations',
-                lines: [site.contact.phone, site.contact.altPhone, site.contact.email],
+                lines: [site.contact.phone, site.contact.email],
               },
             ].map(({ Icon, t, lines }, i) => (
               <Reveal key={t} delay={i * 0.07}>

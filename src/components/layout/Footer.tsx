@@ -18,10 +18,10 @@ export default function Footer() {
         <div className="grid gap-14 lg:grid-cols-[1.3fr_repeat(3,1fr)]">
           <div>
             <p className="font-display text-2xl uppercase tracking-[0.14em] text-bone">
-              Jim&rsquo;s <span className="text-gold-500">Poker Room</span>
+              Diamond <span className="text-gold-500">Lounge</span>
             </p>
             <p className="lede mt-5 max-w-xs text-[0.92rem]">
-              {site.tagline}, on level AC6 of Colombo Lotus Tower.
+              {site.tagline}, 30 Marine Drive, Colombo.
             </p>
 
             <div className="mt-8 space-y-3 font-mono text-[0.7rem] tracking-wide text-bone/55">

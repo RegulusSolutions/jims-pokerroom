@@ -6,7 +6,7 @@ import { site } from '@/lib/site';
 export default function CtaBand({
   label = 'Showdown',
   title = 'Take the seat.',
-  body = 'Two tables, nine seats each. Call ahead on a tournament night and we will hold one for you.',
+  body = 'Call ahead on a tournament night and a host will help arrange your seat.',
 }: {
   label?: string;
   title?: string;

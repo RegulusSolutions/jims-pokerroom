@@ -1,8 +1,7 @@
-# Jim's Poker Room — Next.js rebuild
+# Diamond Lounge — Next.js site
 
-A rebuild of jimspokerroom.lk as a Next.js 15 App Router site: gold-on-black,
-3D poker table hero, scroll-driven animation, and every page from the old
-WordPress site carried over as real content.
+A Next.js 15 App Router site for Diamond Lounge at Casino Marina Colombo:
+gold-on-black, a 3D poker-table hero, scroll-driven animation and venue content.
 
 ---
 
@@ -89,7 +88,7 @@ sitemap and static params all pick it up automatically.
 ## Pages
 
 `/` · `/about` · `/founder` · `/games` · `/events` · `/events/past` ·
-`/events/[slug]` · `/packages` · `/majestic-pride` · `/locations` · `/gallery` ·
+`/events/[slug]` · `/packages` · `/casino-marina` · `/locations` · `/gallery` ·
 `/bookings` · `/faq` · `/responsible-gaming` · `/privacy` · `/terms`
 
 Plus generated `robots.txt` and `sitemap.xml`, JSON-LD `EntertainmentBusiness`
@@ -99,7 +98,7 @@ schema in the root layout, and `FAQPage` schema on `/faq`.
 
 ## What was fixed from the old site
 
-- `localhost/JimsPokerRoom/` links in the nav and footer
+- Legacy localhost links in the nav and footer
 - `info@website.com` and the ThemeREX demo social links
 - Links pointing at the second staging domain
 - Contradictory hours ("Open Mon-Sun" then "Sunday: Closed")
@@ -121,7 +120,7 @@ schema in the root layout, and `FAQPage` schema on `/faq`.
 3. **Live bar.** The countdown in `LiveBar.tsx` is real; "Tables running" and the
    stake are placeholders. Wire them to an endpoint if you want true live status.
 4. **Event data.** Buy-ins, stacks and dates are plausible reconstructions, not
-   the room's actual published numbers. Confirm them with Jim before launch.
+   the venue's actual published numbers. Confirm them with the operator before launch.
 5. **Legal pages.** `/privacy` and `/terms` are working drafts. Have a Sri Lankan
    lawyer review them.
 6. **OG image.** Add `public/og.jpg` (1200×630) and reference it in

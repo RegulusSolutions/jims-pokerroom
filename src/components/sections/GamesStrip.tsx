@@ -65,9 +65,9 @@ export default function GamesStrip() {
       <div className="shell relative">
         <SectionHeading
           label="The turn"
-          title="Three games,"
-          gold="every night."
-          body="Hold'em is the house game. Omaha runs alongside it for players who want more variance in the pot."
+          title="Seven games,"
+          gold="one lounge."
+          body="Hold'em and Omaha share the felt with Teen Patti, Andar Bahar, Blackjack and Baccarat — all inside Diamond Lounge at Casino Marina."
         />
 
         <div className="mt-16 grid gap-5 lg:grid-cols-3 lg:gap-6">

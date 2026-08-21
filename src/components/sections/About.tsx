@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Reveal from '@/components/ui/Reveal';
-import Counter from '@/components/ui/Counter';
-import { images } from '@/lib/content';
+import { images, roomFacts } from '@/lib/content';
 
 /** The flop — cinematic room reveal with spotlight glass panel. */
 export default function About() {
@@ -33,7 +32,7 @@ export default function About() {
             <div className="relative h-full min-h-[420px] overflow-hidden border border-gold-500/30 sm:min-h-[520px]">
               <Image
                 src={images.room}
-                alt="The poker room at Colombo Lotus Tower"
+                alt="Inside Diamond Lounge at Casino Marina"
                 fill
                 sizes="(max-width:1024px) 100vw, 55vw"
                 className="object-cover"
@@ -48,7 +47,7 @@ export default function About() {
                 style={{ boxShadow: '0 20px 50px rgba(0,0,0,.4), inset 0 1px 0 rgba(240,223,168,.12)' }}
               >
                 <p className="font-mono text-[0.58rem] uppercase tracking-label text-gold-400">
-                  Lotus Tower · Level AC6
+                  Diamond Lounge · Casino Marina
                 </p>
                 <p className="mt-3 font-display text-[1.55rem] leading-snug text-gold-100">
                   Dedicated felt.
@@ -93,33 +92,32 @@ export default function About() {
                 <div className="mt-6 h-px w-20 bg-gold-line" />
 
                 <p className="lede mt-7">
-                  Jim&rsquo;s isn&rsquo;t a casino floor with a poker table pushed into the corner.
-                  It&rsquo;s a dedicated room inside Majestic Pride at Lotus Tower, built for people
-                  who came to play cards &mdash; casual players on a Friday and serious regulars
-                  grinding a structure, in the same nine seats.
+                  Diamond Lounge brings private-table service to Casino Marina. It is built for
+                  people who came to play cards &mdash; casual players on a Friday and serious
+                  regulars enjoying a structured game in the same lounge.
                 </p>
                 <p className="lede mt-5">
-                  We spread Hold&rsquo;em every night and Omaha most nights, with published blind
-                  structures and dealers who keep the hands moving. Food and drink are on the house
-                  while you&rsquo;re seated.
+                  Hold&rsquo;em and Omaha share the felt with Teen Patti, Andar Bahar, Blackjack and
+                  Baccarat. Professional dealers keep the action moving, with food and drink on the
+                  house while you&rsquo;re seated.
                 </p>
 
                 <div className="mt-10 grid grid-cols-3 gap-3">
-                  {[
-                    { n: 2, s: '', label: 'Tables', glow: 'rgba(201,162,39,.35)' },
-                    { n: 9, s: '', label: 'Seats', glow: 'rgba(225,29,72,.3)' },
-                    { n: 6, s: 'pm', label: 'Doors', glow: 'rgba(22,163,74,.3)' },
-                  ].map((stat) => (
+                  {roomFacts.filter((fact) => fact.value !== '18+').map((fact, index) => (
                     <div
-                      key={stat.label}
+                      key={fact.label}
                       className="border border-gold-500/20 bg-ink/40 px-2 py-5 text-center"
-                      style={{ boxShadow: `inset 0 -2px 20px ${stat.glow}` }}
+                      style={{
+                        boxShadow: `inset 0 -2px 20px ${
+                          ['rgba(201,162,39,.35)', 'rgba(225,29,72,.3)', 'rgba(22,163,74,.3)'][index]
+                        }`,
+                      }}
                     >
                       <p className="font-display text-[2rem] leading-none text-gold-200 sm:text-[2.4rem]">
-                        <Counter value={stat.n} suffix={stat.s} />
+                        {fact.value}
                       </p>
                       <p className="mt-2.5 font-mono text-[0.52rem] uppercase tracking-label text-bone/40">
-                        {stat.label}
+                        {fact.label}
                       </p>
                     </div>
                   ))}

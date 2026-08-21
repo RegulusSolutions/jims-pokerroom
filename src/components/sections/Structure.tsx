@@ -53,7 +53,7 @@ export default function Structure() {
                 </p>
               </div>
               <p className="font-mono text-[0.58rem] uppercase tracking-label text-bone/40">
-                Jim&rsquo;s · AC6
+                Diamond Lounge
               </p>
             </div>
 

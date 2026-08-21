@@ -1,30 +1,28 @@
 export const site = {
-  name: "Jim's Poker Room",
-  shortName: 'Jims Poker Room',
-  url: 'https://jimspokerroom.lk',
-  tagline: "Sri Lanka's dedicated poker room",
+  name: 'Diamond Lounge',
+  shortName: 'Diamond Lounge',
+  url: 'https://diamondlounge.lk',
+  tagline: 'A private lounge inside Casino Marina Colombo',
   description:
-    "Texas Hold'em and Omaha cash games and structured tournaments inside Majestic Pride at Colombo Lotus Tower. Nine seats, professional croupiers, seven nights a week.",
+    'VIP lounge experience at Casino Marina Colombo — Texas Hold\'em, Teen Patti, Andar Bahar, Blackjack, Baccarat and more.',
   founder: 'Jim Ramchand',
 
   contact: {
-    phone: '+94 70 779 8888',
-    phoneHref: 'tel:+94707798888',
-    altPhone: '+94 77 365 4615',
-    altPhoneHref: 'tel:+94773654615',
-    email: 'jimramchand@gmail.com',
-    whatsapp: 'https://wa.me/94707798888',
+    phone: '+94 11 421 9988',
+    phoneHref: 'tel:+94114219988',
+    email: 'info@marinacolombo.com',
+    whatsapp: 'https://wa.me/94114219988',
   },
 
   address: {
-    venue: 'Majestic Pride Casino, Level AC6',
-    building: 'Colombo Lotus Tower',
-    street: '320 D. R. Wijewardena Mawatha',
-    city: 'Colombo 01000',
+    venue: 'Casino Marina Colombo',
+    building: 'Casino Marina',
+    street: '30 Marine Drive',
+    city: 'Colombo 03',
     country: 'Sri Lanka',
-    mapsQuery: 'Colombo+Lotus+Tower+Majestic+Pride+Casino',
+    mapsQuery: 'Casino+Marina+Colombo+Marine+Drive',
     lat: 6.9271,
-    lng: 79.8612,
+    lng: 79.8449,
   },
 
   hours: [
@@ -35,14 +33,14 @@ export const site = {
   ],
 
   social: {
-    facebook: 'https://www.facebook.com/jimspokerroom/',
-    instagram: 'https://www.instagram.com/jimspokerroom/',
-    linkedin: 'https://www.linkedin.com/in/jim-ramchand-9097b19a/',
+    facebook: '#',
+    instagram: '#',
+    linkedin: '#',
   },
 
   partner: {
-    name: 'Majestic Pride Casino',
-    url: 'https://majesticpridelanka.com/',
+    name: 'Casino Marina Colombo',
+    url: 'https://www.casinomarina.com/',
   },
 } as const;
 
@@ -60,7 +58,7 @@ export const footerNav = {
     { label: 'About the room', href: '/about' },
     { label: 'Founder', href: '/founder' },
     { label: 'Games & stakes', href: '/games' },
-    { label: 'Majestic Pride', href: '/majestic-pride' },
+    { label: 'Casino Marina', href: '/casino-marina' },
   ],
   Play: [
     { label: 'Upcoming events', href: '/events' },

@@ -48,12 +48,12 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.2 }}
         >
-          {site.address.building} &middot; Level AC6 &middot; Colombo
+          {site.address.building} &middot; Marine Drive &middot; Colombo
         </motion.p>
 
         <div className="mt-7 max-w-4xl">
           <SplitHeading
-            lines={[{ text: "Sri Lanka's" }, { text: 'poker room.', gold: true }]}
+            lines={[{ text: "Colombo's" }, { text: 'private lounge.', gold: true }]}
             className="text-[clamp(3.2rem,10.5vw,9.5rem)]"
             delay={0.3}
           />
@@ -65,8 +65,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
         >
-          Nine seats, one game. Texas Hold&rsquo;em and Omaha cash tables and structured
-          tournaments, dealt by professional croupiers two hundred metres above Colombo.
+          Seven games, one lounge. Texas Hold&rsquo;em, Omaha, Teen Patti, Andar Bahar,
+          Blackjack and Baccarat, dealt by professional croupiers at Casino Marina.
         </motion.p>
 
         <motion.div

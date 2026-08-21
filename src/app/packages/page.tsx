@@ -10,7 +10,7 @@ import { packages, images } from '@/lib/content';
 export const metadata: Metadata = {
   title: 'Packages',
   description:
-    "Poker packages at Jim's Poker Room — hotel, transfers, tournament entries and flight assistance for players travelling to Colombo.",
+    "Diamond Lounge packages at Casino Marina — hotel, transfers, table reservations and flight assistance for guests travelling to Colombo.",
 };
 
 export default function PackagesPage() {

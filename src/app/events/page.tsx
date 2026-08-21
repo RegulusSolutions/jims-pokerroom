@@ -11,7 +11,7 @@ import { images } from '@/lib/content';
 export const metadata: Metadata = {
   title: 'Upcoming events',
   description:
-    "Tournament calendar for Jim's Poker Room — Poker Mega Week, Cobra Turbo, weekend deepstacks and nightly cash games at Colombo Lotus Tower.",
+    "Tournament calendar for Diamond Lounge at Casino Marina — Poker Mega Week, Cobra Turbo, weekend deepstacks and nightly cash games.",
 };
 
 export default function EventsPage() {
@@ -20,7 +20,7 @@ export default function EventsPage() {
       <PageHero
         label="Upcoming events"
         lines={["What's", { text: 'coming up.', gold: true }]}
-        body="Buy-ins, structures and start times, published in advance. Seats are capped at eighteen across two tables, so tournament nights fill."
+        body="Buy-ins, structures and start times, published in advance. Tournament nights can fill, so reserve with a host ahead of time."
         image={images.casino.roulette}
       />
 

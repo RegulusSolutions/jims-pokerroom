@@ -5,20 +5,13 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Armchair, Check, Dices } from 'lucide-react';
 import RouletteWheel from './RouletteWheel';
-import { amenities, images } from '@/lib/content';
+import { amenities, images, roomFacts } from '@/lib/content';
 
 const PILLARS = [
   { suit: '♠', title: 'Hold\'em nightly', note: 'The house game, every table' },
   { suit: '♥', title: 'Omaha on demand', note: 'Hi and Hi/Lo when you want it' },
   { suit: '♦', title: 'Published structures', note: 'Know the clock before you buy in' },
   { suit: '♣', title: 'Food & drink free', note: 'On the house while you are seated' },
-] as const;
-
-const STATS = [
-  { value: '2', label: 'Tables' },
-  { value: '18', label: 'Seats' },
-  { value: '200m', label: 'Up' },
-  { value: '6pm', label: 'Open' },
 ] as const;
 
 /** The edge — reuses the same verified facts shown on /about, kept short for this stage. */
@@ -80,7 +73,7 @@ export default function CasinoSpectacle() {
             </p>
           </div>
           <p className="font-mono text-[0.58rem] uppercase tracking-label text-bone/50">
-            Lotus Tower · AC6 · Colombo
+            Diamond Lounge · Casino Marina · Colombo
           </p>
         </motion.div>
 
@@ -145,7 +138,7 @@ export default function CasinoSpectacle() {
                 <div className="absolute -bottom-1 -right-1 h-4 w-4 border-b-2 border-r-2 border-gold-300" />
 
                 <p className="relative font-mono text-[0.55rem] uppercase tracking-[0.45em] text-gold-400/90">
-                  Est. poker room
+                  Private lounge
                 </p>
                 <h2
                   className="relative mt-2 font-display text-[clamp(3.2rem,9vw,5.5rem)] leading-[0.9] tracking-[0.16em] gold-text"
@@ -154,11 +147,11 @@ export default function CasinoSpectacle() {
                       'drop-shadow(0 0 18px rgba(201,162,39,.55)) drop-shadow(0 0 40px rgba(240,223,168,.25))',
                   }}
                 >
-                  JIM&rsquo;S
+                  DIAMOND
                 </h2>
                 <div className="relative mx-auto mt-3 h-px w-24 bg-gold-line opacity-80" />
                 <p className="relative mt-3 font-mono text-[0.68rem] uppercase tracking-[0.42em] text-gold-200">
-                  Poker Room
+                  Casino Marina
                 </p>
               </div>
             </div>
@@ -180,15 +173,15 @@ export default function CasinoSpectacle() {
             <div className="absolute right-4 top-4 font-display text-3xl text-gold-500/25" aria-hidden="true">
               ♠
             </div>
-            <p className="label">Above Colombo</p>
+            <p className="label">Inside Casino Marina</p>
             <h3 className="h-display mt-4 text-[clamp(1.6rem,3vw,2.2rem)]">
-              Eighteen seats.
+              Seven games.
               <br />
-              <span className="gold-text">One game.</span>
+              <span className="gold-text">One lounge.</span>
             </h3>
             <p className="lede mt-5 text-[0.92rem]">
               Professional dealers, published structures and complimentary food &amp; drink —
-              two hundred metres over the city.
+              all inside Casino Marina on Marine Drive.
             </p>
 
             {/* The edge — what the room actually gives you, filling the panel */}
@@ -204,7 +197,7 @@ export default function CasinoSpectacle() {
             {/* Pinned to the base so this panel always reaches the floor of the stage */}
             <div className="mt-auto">
               <div className="mt-8 grid grid-cols-4 gap-2 border-t border-gold-500/20 pt-6">
-                {STATS.map((s) => (
+                {roomFacts.map((s) => (
                   <div key={s.label} className="text-center">
                     <p className="font-display text-[1.35rem] leading-none text-gold-200 sm:text-[1.55rem]">
                       {s.value}
