@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="mt-7 max-w-4xl">
           <SplitHeading
             lines={[{ text: "Colombo's" }, { text: 'private lounge.', gold: true }]}
-            className="text-[clamp(3.2rem,10.5vw,9.5rem)]"
+            className="text-[clamp(3.2rem,10.5vw,8rem)]"
             delay={0.3}
           />
         </div>
