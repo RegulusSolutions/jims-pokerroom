@@ -122,26 +122,26 @@ export default function CasinoSpectacle() {
           >
             <RouletteWheel className="relative z-10" />
 
-            {/* Hero wordmark — primary brand signal */}
-            <div className="relative z-10 mt-14 text-center">
+            {/* Hero wordmark — sized to stay inside the center column */}
+            <div className="relative z-10 mt-10 w-full text-center sm:mt-12">
               <div
-                className="relative mx-auto inline-block px-5 py-4 sm:px-8 sm:py-5"
+                className="relative mx-auto w-full max-w-full px-4 pt-4 sm:px-6 sm:py-5"
                 style={{
                   boxShadow:
                     '0 0 60px rgba(201,162,39,.28), 0 0 120px rgba(201,162,39,.12), inset 0 0 40px rgba(240,223,168,.06)',
                 }}
               >
-                <div className="absolute inset-0 border border-gold-500/50" />
-                <div className="absolute -left-1 -top-1 h-4 w-4 border-l-2 border-t-2 border-gold-300" />
-                <div className="absolute -right-1 -top-1 h-4 w-4 border-r-2 border-t-2 border-gold-300" />
-                <div className="absolute -bottom-1 -left-1 h-4 w-4 border-b-2 border-l-2 border-gold-300" />
-                <div className="absolute -bottom-1 -right-1 h-4 w-4 border-b-2 border-r-2 border-gold-300" />
+                <div className="pointer-events-none absolute inset-0 border border-gold-500/50" />
+                <div className="pointer-events-none absolute -left-1 -top-1 h-4 w-4 border-l-2 border-t-2 border-gold-300" />
+                <div className="pointer-events-none absolute -right-1 -top-1 h-4 w-4 border-r-2 border-t-2 border-gold-300" />
+                <div className="pointer-events-none absolute -bottom-1 -left-1 h-4 w-4 border-b-2 border-l-2 border-gold-300" />
+                <div className="pointer-events-none absolute -bottom-1 -right-1 h-4 w-4 border-b-2 border-r-2 border-gold-300" />
 
                 <p className="relative font-mono text-[0.55rem] uppercase tracking-[0.45em] text-gold-400/90">
                   Private lounge
                 </p>
                 <h2
-                  className="relative mt-2 font-display text-[clamp(1.7rem,4.2vw,3rem)] leading-[0.9] tracking-[0.06em] gold-text"
+                  className="relative mt-2 pt-2 font-display text-[clamp(2rem,6.5vw,3.4rem)] leading-[0.95] tracking-[0.1em] gold-text"
                   style={{
                     filter:
                       'drop-shadow(0 0 18px rgba(201,162,39,.55)) drop-shadow(0 0 40px rgba(240,223,168,.25))',
@@ -150,7 +150,7 @@ export default function CasinoSpectacle() {
                   DIAMOND
                 </h2>
                 <div className="relative mx-auto mt-3 h-px w-24 bg-gold-line opacity-80" />
-                <p className="relative mt-3 font-mono text-[0.68rem] uppercase tracking-[0.42em] text-gold-200">
+                <p className="relative mt-3 font-mono text-[0.62rem] uppercase tracking-[0.38em] text-gold-200">
                   Casino Marina
                 </p>
               </div>
