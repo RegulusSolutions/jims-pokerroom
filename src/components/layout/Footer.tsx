@@ -1,7 +1,9 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Facebook, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
 import Atmosphere from '@/components/ui/Atmosphere';
 import { site, footerNav } from '@/lib/site';
+import { images } from '@/lib/content';
 
 export default function Footer() {
   return (
@@ -17,9 +19,13 @@ export default function Footer() {
 
         <div className="grid gap-14 lg:grid-cols-[1.3fr_repeat(3,1fr)]">
           <div>
-            <p className="font-display text-2xl uppercase tracking-[0.14em] text-bone">
-              Diamond <span className="text-gold-500">Lounge</span>
-            </p>
+            <Image
+              src={images.logo}
+              alt={site.name}
+              width={1253}
+              height={688}
+              className="h-12 w-auto"
+            />
             <p className="lede mt-5 max-w-xs text-[0.92rem]">
               {site.tagline}, 30 Marine Drive, Colombo.
             </p>

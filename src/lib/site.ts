@@ -4,7 +4,7 @@ export const site = {
   url: 'https://diamondlounge.lk',
   tagline: 'A private lounge inside Casino Marina Colombo',
   description:
-    'VIP lounge experience at Casino Marina Colombo — Texas Hold\'em, Teen Patti, Andar Bahar, Blackjack, Baccarat and more.',
+    'VIP lounge experience at Casino Marina Colombo — Texas Hold\'em, PLO5, Roulette, Baccarat, Blackjack, Andar Bahar and Niu Niu, open 24 hours.',
   founder: 'Jim Ramchand',
 
   contact: {
@@ -26,10 +26,7 @@ export const site = {
   },
 
   hours: [
-    { day: 'Monday – Thursday', time: '6:00 pm – 4:00 am' },
-    { day: 'Friday – Saturday', time: '6:00 pm – late' },
-    { day: 'Sunday', time: 'Closed' },
-    { day: 'Poya days', time: 'Closed' },
+    { day: 'Every day', time: 'Open 24 hours' },
   ],
 
   social: {

@@ -97,9 +97,9 @@ export default function About() {
                   regulars enjoying a structured game in the same lounge.
                 </p>
                 <p className="lede mt-5">
-                  Hold&rsquo;em and Omaha share the felt with Teen Patti, Andar Bahar, Blackjack and
-                  Baccarat. Professional dealers keep the action moving, with food and drink on the
-                  house while you&rsquo;re seated.
+                  Hold&rsquo;em and PLO5 share the felt with Roulette, Andar Bahar, Blackjack,
+                  Baccarat and Niu Niu. Professional dealers keep the action moving, with food and
+                  drink on the house while you&rsquo;re seated.
                 </p>
 
                 <div className="mt-10 grid grid-cols-3 gap-3">

@@ -1,10 +1,12 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { nav, site } from '@/lib/site';
+import { images } from '@/lib/content';
 import { cn } from '@/lib/utils';
 
 export default function Nav() {
@@ -39,13 +41,15 @@ export default function Nav() {
         )}
       >
         <div className="shell flex items-center justify-between py-5">
-          <Link href="/" className="group flex items-baseline gap-2" aria-label={site.name}>
-            <span className="font-display text-[1.02rem] uppercase tracking-[0.16em] text-bone">
-              Diamond
-            </span>
-            <span className="font-display text-[1.02rem] uppercase tracking-[0.16em] text-gold-500 transition-colors group-hover:text-gold-200">
-              Lounge
-            </span>
+          <Link href="/" className="group flex items-center" aria-label={site.name}>
+            <Image
+              src={images.logo}
+              alt={site.name}
+              width={1253}
+              height={688}
+              priority
+              className="h-9 w-auto sm:h-11"
+            />
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">

@@ -9,7 +9,7 @@ import { games, blindLevels, images } from '@/lib/content';
 export const metadata: Metadata = {
   title: 'Games & stakes',
   description:
-    "Texas Hold'em, Omaha, Teen Patti, Andar Bahar, Blackjack and Baccarat at Diamond Lounge inside Casino Marina Colombo.",
+    "Texas Hold'em, PLO5, Roulette, Baccarat, Blackjack, Andar Bahar and Niu Niu at Diamond Lounge inside Casino Marina Colombo.",
 };
 
 const houseRules = [
@@ -33,7 +33,7 @@ export default function GamesPage() {
       <PageHero
         label="Games & stakes"
         lines={['What we', { text: 'deal.', gold: true }]}
-        body="Cash tables open at six and run until the last seat empties. Tournament structures are published so you know the clock before you buy in."
+        body="Cash tables run around the clock, every day. Tournament structures are published so you know the clock before you buy in."
         image={images.casino.cards}
       />
 
@@ -57,7 +57,7 @@ export default function GamesPage() {
                     {g.name}
                   </h2>
                   <p className="relative mt-2 font-mono text-[0.62rem] uppercase tracking-label text-bone/35">
-                    {g.detail}
+                    {g.detail} &middot; {g.tables} {g.tables === 1 ? 'table' : 'tables'}
                   </p>
                   <p className="lede relative mt-6 flex-1 text-[0.9rem]">{g.body}</p>
                   <div className="relative mt-8 border-t border-gold-500/15 pt-6">

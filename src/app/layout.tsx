@@ -8,6 +8,7 @@ import LiveBar from '@/components/layout/LiveBar';
 import AgeGate from '@/components/layout/AgeGate';
 import SmoothScroll from '@/components/layout/SmoothScroll';
 import { site } from '@/lib/site';
+import { images } from '@/lib/content';
 
 /* Display: Prata — a Didone. High stroke contrast reads as gold leaf on black.
    Body: Jost — a Futura revival, the geometric register of Deco-era rooms.
@@ -28,8 +29,9 @@ export const metadata: Metadata = {
     'Casino Marina Colombo',
     'VIP lounge Colombo',
     "Texas Hold'em Colombo",
-    'Teen Patti Colombo',
+    'Roulette Colombo',
     'Blackjack Baccarat Colombo',
+    'Casino open 24 hours Colombo',
   ],
   openGraph: {
     type: 'website',
@@ -38,9 +40,11 @@ export const metadata: Metadata = {
     title: `${site.name} — Casino Marina Colombo`,
     description: site.description,
     url: site.url,
+    images: [images.logo],
   },
   twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true },
+  icons: { icon: images.logo, shortcut: images.logo, apple: images.logo },
 };
 
 export const viewport: Viewport = {

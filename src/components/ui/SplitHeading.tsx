@@ -20,7 +20,7 @@ export default function SplitHeading({
         const text = typeof line === 'string' ? line : line.text;
         const gold = typeof line === 'string' ? false : line.gold;
         return (
-          <span key={i} className="block overflow-hidden pb-[0.06em]">
+          <span key={i} className="block overflow-hidden pt-[0.12em] pb-[0.16em]">
             <motion.span
               className={`block ${gold ? 'gold-text' : ''}`}
               initial={reduced ? false : { y: '112%' }}

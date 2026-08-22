@@ -67,7 +67,7 @@ export default function GamesStrip() {
           label="The turn"
           title="Seven games,"
           gold="one lounge."
-          body="Hold'em and Omaha share the felt with Teen Patti, Andar Bahar, Blackjack and Baccarat — all inside Diamond Lounge at Casino Marina."
+          body="Hold'em and PLO5 share the felt with Roulette, Andar Bahar, Blackjack, Baccarat and Niu Niu — all inside Diamond Lounge at Casino Marina."
         />
 
         <div className="mt-16 grid gap-5 lg:grid-cols-3 lg:gap-6">
@@ -90,7 +90,7 @@ export default function GamesStrip() {
                             {g.name}
                           </h3>
                           <p className="mt-2 font-mono text-[0.6rem] uppercase tracking-label text-bone/40">
-                            {g.detail}
+                            {g.detail} &middot; {g.tables} {g.tables === 1 ? 'table' : 'tables'}
                           </p>
                         </div>
                         <div className="flex -space-x-2 pt-1">

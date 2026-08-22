@@ -2,15 +2,14 @@ const HOST = 'https://darkgray-stork-483947.hostingersite.com/wp-content/uploads
 const HOST2 = 'https://cornflowerblue-rabbit-756428.hostingersite.com/wp-content/uploads';
 
 export const images = {
-  logo: `${HOST2}/2025/01/Jims-poker-room-gold-logo-copy-111_11zon.png`,
-  logoAlt: `${HOST2}/2023/02/Jims-poker-room-gold-logo-copy-1_11zon.png`,
+  logo: '/images/Diamond-Lounge-logo.png',
   about: `${HOST}/2025/03/About-us-829x1024.png`,
   room: `${HOST}/2024/12/Home.jpg`,
   chipA: `${HOST}/2025/01/poker-chip-1-new2.png`,
   chipB: `${HOST}/2025/01/poker-chip-2-new-11.png`,
   /** Verified working colourful casino imagery + room shots. */
   casino: {
-    hero: 'https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&w=2000&q=80',
+    hero: '/images/hero-bg.jpg',
     chips: 'https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&w=1400&q=80',
     cards: 'https://images.unsplash.com/photo-1541278107931-e006523892df?auto=format&fit=crop&w=1200&q=80',
     roulette: 'https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&w=1200&q=80',
@@ -30,57 +29,64 @@ export const games = [
     name: "Texas Hold'em",
     code: 'NLH',
     detail: 'No limit',
+    tables: 2,
     body:
-      'Two hole cards, five community cards, no cap on what you can bet. Cash tables run every night from six, and every tournament on the calendar is Hold\'em unless it says otherwise.',
+      'Two hole cards, five community cards, no cap on what you can bet. Runs on two tables shared with PLO5, live around the clock.',
     stakes: ['100 / 200', '200 / 400', '500 / 1,000'],
   },
   {
-    name: 'Omaha Hi',
-    code: 'PLO',
-    detail: 'Pot limit',
+    name: 'PLO5',
+    code: 'PLO5',
+    detail: 'Pot limit, five cards',
+    tables: 2,
     body:
-      'Four hole cards, exactly two of which play. Bigger pots, bigger swings — the game regulars move to when Hold\'em stops feeling loose enough.',
+      'Five hole cards, exactly two of which play. Shares the same two tables as Hold\'em — bigger pots, bigger swings, dealt whenever the room calls for it.',
     stakes: ['200 / 400', '500 / 1,000'],
   },
   {
-    name: 'Teen Patti',
-    code: 'TP',
-    detail: 'Three cards',
+    name: 'Roulette',
+    code: 'ROU',
+    detail: 'Single zero',
+    tables: 2,
     body:
-      'Classic three-card showdown with blind, chaal and show. Fast rounds, familiar to most players walking in from the Marina floor.',
-    stakes: ['Table limits on request'],
-  },
-  {
-    name: 'Andar Bahar',
-    code: 'AB',
-    detail: 'Side betting',
-    body:
-      'One joker, two sides. Cards deal until a match lands on Andar or Bahar. Simple to learn, quick to play, open whenever the lounge is live.',
-    stakes: ['Table limits on request'],
-  },
-  {
-    name: 'Blackjack',
-    code: 'BJ',
-    detail: 'Table game',
-    body:
-      'Hit, stand, double, split — beat the dealer to 21 without going over. Standard casino rules with lounge-side service at the table.',
+      'Straight-up numbers or outside bets on reds, blacks, dozens and columns. Two wheels spinning, croupier-run all day and night.',
     stakes: ['Table limits on request'],
   },
   {
     name: 'Baccarat',
     code: 'BAC',
     detail: 'Table game',
+    tables: 3,
     body:
-      'Player, Banker or Tie. Clean rounds, clear odds, and the calm pace a private lounge is built for.',
+      'Player, Banker or Tie. Clean rounds, clear odds, and the busiest floor in the room — spread across three tables.',
     stakes: ['Table limits on request'],
   },
   {
-    name: 'Omaha Hi/Lo',
-    code: 'PLO8',
-    detail: 'Pot limit, split pot',
+    name: 'Blackjack',
+    code: 'BJ',
+    detail: 'Table game',
+    tables: 1,
     body:
-      'The pot splits between the best high hand and the best qualifying low. Opens on request when there is enough interest.',
-    stakes: ['On request'],
+      'Hit, stand, double, split — beat the dealer to 21 without going over. Standard casino rules with lounge-side service at the table.',
+    stakes: ['Table limits on request'],
+  },
+  {
+    name: 'Andar Bahar',
+    code: 'AB',
+    detail: 'Side betting',
+    tables: 1,
+    body:
+      'One joker, two sides. Cards deal until a match lands on Andar or Bahar. Simple to learn, quick to play, open whenever the lounge is live.',
+    stakes: ['Table limits on request'],
+  },
+  {
+    name: 'Niu Niu',
+    code: 'NN',
+    detail: 'Table game',
+    tables: 1,
+    body:
+      'Five cards, best combination against the banker — pairs and triples multiply the payout. A regional favourite on one table, open whenever the lounge is live.',
+    stakes: ['Table limits on request'],
   },
 ] as const;
 
@@ -99,9 +105,9 @@ export const blindLevels = [
 /* ------------------------------------------------------------- room facts */
 export const roomFacts = [
   { value: 'VIP', label: 'Private lounge' },
-  { value: 'Multi', label: 'Game tables' },
+  { value: '10', label: 'Game tables' },
   { value: '18+', label: 'Minimum age' },
-  { value: '6pm', label: 'Doors open' },
+  { value: '24/7', label: 'Open daily' },
 ] as const;
 
 export const amenities = [
@@ -178,7 +184,7 @@ export const faqs = [
   },
   {
     q: 'Which games do you spread?',
-    a: "Hold'em and Omaha run most nights. Teen Patti, Andar Bahar, Blackjack and Baccarat are available in the lounge, and Omaha Hi/Lo opens on request when there is enough interest.",
+    a: "Hold'em and PLO5 share two tables. Roulette runs on two more, Baccarat on three, and Blackjack, Andar Bahar and Niu Niu each hold a table of their own — ten tables live around the clock.",
   },
   {
     q: 'What are the stakes?',
@@ -202,7 +208,7 @@ export const faqs = [
   },
   {
     q: 'Are you open on Poya days?',
-    a: 'No. The lounge is closed on Poya days and on Sundays, in line with Sri Lankan gaming regulations.',
+    a: 'Yes. Diamond Lounge runs 24 hours a day, every day of the week, including Poya days.',
   },
   {
     q: 'Can I organise a private game?',
@@ -237,7 +243,7 @@ export const houseValues = [
   },
   {
     title: 'Stakes and games for whoever sits down',
-    body: 'From 100 / 200 Hold\'em to pot-limit Omaha and table limits on Teen Patti or Baccarat — the mix changes with the crowd, not with your buy-in.',
+    body: 'From 100 / 200 Hold\'em to pot-limit PLO5, plus Roulette, Baccarat, Blackjack, Andar Bahar and Niu Niu — the mix changes with the crowd, not with your buy-in.',
   },
   {
     title: 'Marine Drive, done right',

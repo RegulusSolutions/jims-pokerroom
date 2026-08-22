@@ -18,11 +18,13 @@ export default function HomePage() {
       <Marquee
         items={[
           "Texas Hold'em",
-          'Omaha Hi',
-          'Omaha Hi/Lo',
+          'PLO5',
+          'Roulette',
+          'Baccarat',
+          'Niu Niu',
           'Cash & tournaments',
           'Casino Marina',
-          'Open 6pm',
+          'Open 24 hours',
         ]}
       />
       <CasinoSpectacle />

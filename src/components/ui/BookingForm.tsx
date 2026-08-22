@@ -77,7 +77,7 @@ export default function BookingForm() {
         <div className="sm:col-span-2">
           <label className={labelCls} htmlFor="game">Game</label>
           <select id="game" value={form.game} onChange={set('game')} className={cn(field, 'appearance-none')}>
-            {["Texas Hold'em cash", 'Omaha Hi cash', 'Omaha Hi/Lo cash', 'Tournament entry', 'Private table', 'Not sure yet'].map((g) => (
+            {["Texas Hold'em cash", 'PLO5 cash', 'Roulette', 'Baccarat', 'Blackjack', 'Andar Bahar', 'Niu Niu', 'Tournament entry', 'Private table', 'Not sure yet'].map((g) => (
               <option key={g} value={g} className="bg-onyx">{g}</option>
             ))}
           </select>

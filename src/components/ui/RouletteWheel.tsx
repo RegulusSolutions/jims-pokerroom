@@ -64,7 +64,7 @@ export default function RouletteWheel({ className = '' }: { className?: string }
           boxShadow: '0 4px 16px rgba(0,0,0,.45)',
         }}
       >
-        <span className="font-display text-[clamp(1.2rem,4vw,1.8rem)] leading-none text-ink">J</span>
+        <span className="font-display text-[clamp(1.2rem,4vw,1.8rem)] leading-none text-ink">D</span>
       </div>
 
       {/* Orbiting ball track */}

@@ -125,7 +125,7 @@ export default function CasinoSpectacle() {
             {/* Hero wordmark — primary brand signal */}
             <div className="relative z-10 mt-14 text-center">
               <div
-                className="relative mx-auto inline-block px-6 py-4 sm:px-10 sm:py-5"
+                className="relative mx-auto inline-block px-5 py-4 sm:px-8 sm:py-5"
                 style={{
                   boxShadow:
                     '0 0 60px rgba(201,162,39,.28), 0 0 120px rgba(201,162,39,.12), inset 0 0 40px rgba(240,223,168,.06)',
@@ -141,7 +141,7 @@ export default function CasinoSpectacle() {
                   Private lounge
                 </p>
                 <h2
-                  className="relative mt-2 font-display text-[clamp(3.2rem,9vw,5.5rem)] leading-[0.9] tracking-[0.16em] gold-text"
+                  className="relative mt-2 font-display text-[clamp(1.7rem,4.2vw,3rem)] leading-[0.9] tracking-[0.06em] gold-text"
                   style={{
                     filter:
                       'drop-shadow(0 0 18px rgba(201,162,39,.55)) drop-shadow(0 0 40px rgba(240,223,168,.25))',

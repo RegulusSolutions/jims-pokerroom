@@ -37,9 +37,9 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={0.08}>
               <p className="lede">
-                Texas Hold&rsquo;em and Omaha are joined by Teen Patti, Andar Bahar, Blackjack and
-                Baccarat. From cash tables to tournament structures and classic casino games, there
-                is a table for every kind of player.
+                Texas Hold&rsquo;em and PLO5 are joined by Roulette, Andar Bahar, Blackjack,
+                Baccarat and Niu Niu. From cash tables to tournament structures and classic casino
+                games, there is a table for every kind of player.
               </p>
             </Reveal>
             <Reveal delay={0.14}>

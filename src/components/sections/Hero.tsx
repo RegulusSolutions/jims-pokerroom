@@ -22,19 +22,18 @@ export default function Hero() {
           sizes="100vw"
           className="object-cover object-[center_35%] scale-105"
         />
-        {/* Colour washes — emerald felt + ruby + gold */}
+        {/* Dark wash for text legibility over the photo */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(115deg, rgba(5,5,6,.92) 0%, rgba(5,5,6,.72) 42%, rgba(22,101,52,.35) 70%, rgba(185,28,28,.28) 100%)',
+              'linear-gradient(115deg, rgba(5,5,6,.92) 0%, rgba(5,5,6,.75) 50%, rgba(5,5,6,.6) 100%)',
           }}
         />
         <div
           className="absolute inset-0"
           style={{
-            background:
-              'radial-gradient(ellipse 70% 55% at 70% 40%, rgba(201,162,39,.22), transparent 55%), linear-gradient(to top, #050506 0%, transparent 42%)',
+            background: 'linear-gradient(to top, #050506 0%, transparent 42%)',
           }}
         />
       </div>
@@ -54,7 +53,7 @@ export default function Hero() {
         <div className="mt-7 max-w-4xl">
           <SplitHeading
             lines={[{ text: "Colombo's" }, { text: 'private lounge.', gold: true }]}
-            className="text-[clamp(3.2rem,10.5vw,9.5rem)]"
+            className="text-[clamp(2.6rem,7.5vw,6.5rem)]"
             delay={0.3}
           />
         </div>
@@ -65,8 +64,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
         >
-          Seven games, one lounge. Texas Hold&rsquo;em, Omaha, Teen Patti, Andar Bahar,
-          Blackjack and Baccarat, dealt by professional croupiers at Casino Marina.
+          Seven games, one lounge. Texas Hold&rsquo;em, PLO5, Roulette, Andar Bahar,
+          Blackjack, Baccarat and Niu Niu, dealt by professional croupiers at Casino Marina.
         </motion.p>
 
         <motion.div

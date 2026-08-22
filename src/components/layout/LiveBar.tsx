@@ -1,35 +1,5 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { nextDailyAt } from '@/lib/utils';
-
-/** Fixed bottom status strip. The countdown is real; the table counts are
- *  placeholders wired to be replaced by an API route later. */
+/** Fixed bottom status strip. The lounge runs 24 hours, so tables are always live. */
 export default function LiveBar() {
-  const [left, setLeft] = useState('--:--:--');
-  const [live, setLive] = useState(false);
-
-  useEffect(() => {
-    let target = nextDailyAt(18);
-    const tick = () => {
-      const now = new Date();
-      const hour = now.getHours();
-      setLive(hour >= 18 || hour < 4);
-      let s = Math.floor((target.getTime() - now.getTime()) / 1000);
-      if (s < 0) {
-        target = nextDailyAt(18);
-        s = Math.floor((target.getTime() - now.getTime()) / 1000);
-      }
-      const h = String(Math.floor(s / 3600)).padStart(2, '0');
-      const m = String(Math.floor((s % 3600) / 60)).padStart(2, '0');
-      const sec = String(s % 60).padStart(2, '0');
-      setLeft(`${h}:${m}:${sec}`);
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-gold-500/25 bg-ink/85 backdrop-blur-xl">
       <div
@@ -41,12 +11,8 @@ export default function LiveBar() {
       />
       <div className="shell relative flex items-center gap-4 overflow-hidden whitespace-nowrap py-2.5 font-mono text-[0.64rem] tracking-wider2 text-bone/55 sm:gap-7">
         <span className="flex items-center gap-2">
-          <span
-            className={`inline-block h-1.5 w-1.5 animate-pulseDot rounded-full ${
-              live ? 'bg-emerald-400 shadow-[0_0_10px_#34d399]' : 'bg-gold-400 shadow-[0_0_10px_#D9B959]'
-            }`}
-          />
-          <span className="text-gold-200">{live ? 'Tables running' : 'Room closed'}</span>
+          <span className="inline-block h-1.5 w-1.5 animate-pulseDot rounded-full bg-emerald-400 shadow-[0_0_10px_#34d399]" />
+          <span className="text-gold-200">Tables running</span>
         </span>
         <span className="text-gold-500/40">/</span>
         <span className="hidden sm:inline">
@@ -54,7 +20,7 @@ export default function LiveBar() {
         </span>
         <span className="hidden text-gold-500/40 sm:inline">/</span>
         <span>
-          Doors open in <span className="text-gold-200">{left}</span>
+          Open <span className="text-gold-200">24 hours</span>
         </span>
         <span className="hidden text-gold-500/40 md:inline">/</span>
         <span className="hidden md:inline">Casino Marina &middot; Colombo</span>

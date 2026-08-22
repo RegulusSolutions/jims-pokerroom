@@ -85,7 +85,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <CtaBand title="See it yourself." body="Doors open at six. Bring ID." />
+      <CtaBand title="See it yourself." body="Open 24 hours. Bring ID." />
     </>
   );
 }

@@ -169,14 +169,6 @@ export default function CasinoMotifs({ dense = false }: { dense?: boolean }) {
         className="absolute -left-1/4 top-0 h-[70%] w-[70%] rounded-full opacity-40 blur-3xl"
         style={{ background: 'radial-gradient(circle, rgba(22,101,52,.55), transparent 68%)' }}
       />
-      <div
-        className="absolute -right-1/4 bottom-0 h-[60%] w-[60%] rounded-full opacity-35 blur-3xl"
-        style={{ background: 'radial-gradient(circle, rgba(185,28,28,.4), transparent 68%)' }}
-      />
-      <div
-        className="absolute left-1/3 top-1/4 h-[40%] w-[40%] rounded-full opacity-30 blur-3xl"
-        style={{ background: 'radial-gradient(circle, rgba(201,162,39,.35), transparent 70%)' }}
-      />
 
       <motion.div
         className="absolute right-[4%] top-[18%] w-[4.6rem] sm:right-[8%] sm:w-[6.5rem] lg:w-[7.5rem]"
